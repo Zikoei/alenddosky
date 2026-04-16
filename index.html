@@ -1,0 +1,2844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alend Dosky — Fat Loss Without The Sacrifice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Syncopate:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<style>
+/* ─── RESET & BASE ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #080808;
+  --bg2: #0d0d0d;
+  --bg3: #111111;
+  --silver: #c8c8c8;
+  --silver-dim: #9a9a9a;
+  --gold: #b8a98a;
+  --gold-light: #cbbf9e;
+  --gold-dim: #7a6e56;
+  --white: #f0f0f0;
+  --text: #b2b2b2;
+  --border: rgba(184,169,138,0.18);
+  --border-silver: rgba(200,200,200,0.1);
+  --font-head: 'Cormorant Garamond', Georgia, serif;
+  --font-label: 'Syncopate', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --max: 1200px;
+  --nav-h: 72px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.028;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+a:visited { color: inherit; }
+a:link { color: inherit; }
+button { cursor: pointer; font-family: var(--font-label); }
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-label);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--border);
+  padding: 6px 16px;
+  margin-bottom: 28px;
+}
+
+.section-head {
+  font-family: var(--font-head);
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+
+/* ─── NAV ──────────────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  z-index: 1000;
+  transition: background 0.35s, backdrop-filter 0.35s, border-color 0.35s;
+  border-bottom: 1px solid transparent;
+}
+nav.scrolled {
+  background: rgba(8,8,8,0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom-color: var(--border);
+}
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.nav-logo {
+  font-family: var(--font-label);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--white);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--font-label);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--silver-dim);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-label);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding: 10px 20px;
+  transition: background 0.22s, color 0.22s, border-color 0.22s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.nav-cta:hover { background: var(--gold); color: #080808 !important; border-color: var(--gold); }
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px; height: 1.5px;
+  background: var(--silver);
+  transition: 0.3s;
+}
+.mobile-menu {
+  display: flex;
+  position: fixed;
+  inset: var(--nav-h) 0 0 0;
+  background: rgba(8,8,8,0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.32s ease, visibility 0.32s ease, transform 0.32s ease;
+  pointer-events: none;
+}
+.mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.mobile-menu a {
+  font-family: var(--font-label);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: var(--silver);
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-menu .nav-cta { font-size: 11px; padding: 14px 32px; }
+
+/* ─── HERO ─────────────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  padding-top: var(--nav-h);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-grid {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 80px 40px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.hero-left { display: flex; flex-direction: column; gap: 28px; }
+.hero-tag {
+  font-family: var(--font-label);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.hero-headline {
+  font-family: var(--font-head);
+  font-size: clamp(44px, 5.5vw, 72px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.05;
+}
+.hero-headline em { font-style: italic; color: var(--gold); }
+.hero-sub {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--silver-dim);
+  max-width: 500px;
+}
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.btn-solid {
+  background: var(--gold);
+  color: #080808 !important;
+  border: 2px solid var(--gold);
+  font-family: var(--font-label);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  padding: 16px 32px;
+  transition: background 0.22s, border-color 0.22s, transform 0.18s;
+  display: inline-block;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 1;
+}
+.btn-solid:hover { background: var(--gold-light); border-color: var(--gold-light); color: #080808 !important; transform: translateY(-2px); opacity: 1; }
+.btn-solid:visited { color: #080808 !important; }
+.btn-ghost {
+  background: transparent;
+  color: #f0f0f0;
+  border: 1.5px solid rgba(240,240,240,0.5);
+  font-family: var(--font-label);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  padding: 15px 28px;
+  transition: background 0.22s, border-color 0.22s, color 0.22s, transform 0.18s;
+  display: inline-block;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.btn-ghost:hover { background: #f0f0f0; border-color: #f0f0f0; color: #080808; transform: translateY(-2px); }
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.hero-stat-num {
+  font-family: var(--font-head);
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hero-stat-label {
+  font-family: var(--font-label);
+  font-size: 8.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--silver-dim);
+}
+.hero-stat-sub {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--silver-dim);
+  margin-top: 1px;
+  margin-bottom: 2px;
+  font-weight: 300;
+}
+.hero-stat-current {
+  font-family: var(--font-label);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-top: 4px;
+}
+
+/* Hero image / transformation placeholder */
+.hero-right { position: relative; }
+.transformation-frame {
+  position: relative;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  overflow: visible;
+}
+.transformation-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(184,169,138,0.04) 0%, transparent 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+.transformation-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+}
+.transform-half {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 20px;
+  min-height: 480px;
+  background: var(--bg2);
+}
+.transform-half.after-half { background: var(--bg3); border-left: 1px solid var(--border); }
+.transform-half-label {
+  position: absolute;
+  top: 14px; left: 14px;
+  font-family: var(--font-label);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  z-index: 2;
+}
+.label-before { background: rgba(200,200,200,0.12); color: var(--silver-dim); }
+.label-after { background: rgba(184,169,138,0.18); color: var(--gold); }
+
+/* Placeholder image container */
+.photo-placeholder {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(184,169,138,0.2);
+  background: rgba(255,255,255,0.02);
+  padding: 30px 16px;
+  text-align: center;
+  gap: 12px;
+  min-height: 300px;
+}
+.photo-placeholder svg {
+  opacity: 0.25;
+  width: 40px; height: 40px;
+  flex-shrink: 0;
+}
+.photo-placeholder span {
+  font-family: var(--font-label);
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  color: var(--silver-dim);
+  text-transform: uppercase;
+  line-height: 1.6;
+  display: block;
+}
+.photo-placeholder.real-photo {
+  padding: 0;
+  border: none;
+  background: none;
+}
+.photo-placeholder.real-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.transform-caption {
+  font-family: var(--font-label);
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  color: var(--silver-dim);
+  text-transform: uppercase;
+  padding-top: 10px;
+}
+
+/* ── Real photo rendering ─────────────────────────────────────── */
+.img-real {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: block;
+}
+.img-real img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: brightness(0.86) contrast(1.08) saturate(0.88);
+  min-height: inherit;
+}
+.img-real::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8,8,8,0.15) 0%, rgba(8,8,8,0.55) 100%);
+  pointer-events: none;
+}
+/* Hero single-image transformation frame */
+.hero-transform-single {
+  position: relative;
+  width: 100%;
+}
+.hero-transform-single img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0.92) contrast(1.04) saturate(0.92);
+}
+.hero-transform-label {
+  position: absolute;
+  top: 14px;
+  font-family: var(--font-label);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  padding: 5px 10px;
+  z-index: 2;
+  text-transform: uppercase;
+}
+.hero-transform-label.lbl-before { left: 14px; background: rgba(200,200,200,0.15); color: var(--silver-dim); }
+.hero-transform-label.lbl-after  { left: calc(50% + 14px); background: rgba(184,169,138,0.2); color: var(--gold); }
+.hero-transform-divider {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: rgba(184,169,138,0.3);
+  z-index: 2;
+}
+/* Result card real images */
+.result-photo-half .img-real { min-height: 320px; }
+.result-photo-half .img-real img { min-height: 320px; }
+/* Story collage real images */
+.story-photo-half .img-real { min-height: 420px; width: 100%; }
+.story-photo-half .img-real img { min-height: 420px; }
+
+.hero-urgency {
+  background: rgba(184,169,138,0.07);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 40px;
+  text-align: center;
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+/* ─── MARQUEE ──────────────────────────────────────────────────── */
+.marquee-strip {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+  overflow: hidden;
+  position: relative;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+.marquee-item {
+  font-family: var(--font-label);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--silver-dim);
+  padding: 0 42px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ─── SECTION: WHY YOU'RE STUCK ────────────────────────────────── */
+.section { padding: 140px 0; }
+.section.alt { background: var(--bg2); }
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.problem-body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--text);
+}
+.problem-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.prob-card {
+  background: var(--bg3);
+  border: 1px solid var(--border-silver);
+  padding: 28px 24px;
+  transition: border-color 0.22s;
+}
+.prob-card:hover { border-color: var(--gold-dim); }
+.prob-card-icon {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+.prob-card-title {
+  font-family: var(--font-head);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+.prob-card-desc {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--silver-dim);
+}
+
+/* ─── SECTION: YOUR STORY ──────────────────────────────────────── */
+.story-layout { display: flex; flex-direction: column; gap: 56px; }
+
+/* Two-column photo grid: before/after left | profile right */
+.story-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  min-height: 440px;
+}
+.story-photos-col {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 440px;
+  border-right: 1px solid var(--border);
+}
+.story-photos-col .img-real:first-child {
+  border-right: 1px solid var(--border);
+}
+.story-before-label,
+.story-after-label {
+  position: absolute;
+  top: 12px;
+  font-family: var(--font-label);
+  font-size: 7.5px;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  padding: 4px 9px;
+  z-index: 3;
+  text-transform: uppercase;
+}
+.story-before-label { left: 10px; background: rgba(200,200,200,0.12); color: var(--silver-dim); }
+.story-after-label  { left: calc(50% + 10px); background: rgba(184,169,138,0.18); color: var(--gold); }
+.story-profile-col {
+  position: relative;
+  min-height: 440px;
+}
+
+.story-photo-full {
+  width: 100%;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.story-text-full {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.story-text {
+  font-size: 16.5px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--text);
+}
+.story-text p + p { margin-top: 20px; }
+.story-pull {
+  font-family: var(--font-head);
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--silver);
+  line-height: 1.4;
+  border-left: 2px solid var(--gold);
+  padding-left: 24px;
+  max-width: 640px;
+}
+
+/* ─── SECTION: THE METHOD ──────────────────────────────────────── */
+.method-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+.method-card {
+  background: var(--bg3);
+  border: 1px solid var(--border-silver);
+  padding: 44px 36px;
+  position: relative;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.method-card:hover { border-color: var(--gold); transform: translateY(-6px); }
+.method-num {
+  font-family: var(--font-label);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: var(--gold-dim);
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+.method-title {
+  font-family: var(--font-head);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+.method-body {
+  font-size: 14.5px;
+  font-weight: 300;
+  line-height: 1.78;
+  color: var(--silver-dim);
+}
+.method-bar {
+  width: 36px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 28px;
+}
+
+/* ─── ORBITAL TIMELINE ─────────────────────────────────────────── */
+.orbital-section {
+  position: relative;
+  width: 100%;
+  height: 784px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 48px 0 64px;
+  overflow: visible;
+}
+.orbital-wrapper {
+  position: relative;
+  width: 736px;
+  height: 736px;
+  flex-shrink: 0;
+}
+/* Center node */
+.orbital-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  pointer-events: none;
+}
+.orbital-center-core {
+  width: 102px;
+  height: 102px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 38%, var(--gold-light), var(--gold), var(--gold-dim));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: orb-pulse 3s ease-in-out infinite;
+  box-shadow: 0 0 38px rgba(184,169,138,0.28);
+}
+.orbital-center-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(184,169,138,0.28);
+  animation: orb-ping 2s cubic-bezier(0,0,0.2,1) infinite;
+  pointer-events: none;
+}
+.orbital-center-ring:nth-child(1) { width: 131px; height: 131px; }
+.orbital-center-ring:nth-child(2) { width: 160px; height: 160px; animation-delay: 0.6s; border-color: rgba(184,169,138,0.14); }
+.orbital-center-inner {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--bg);
+}
+.orbital-center-label {
+  margin-top: 64px;
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.orbital-center-sub {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--silver-dim);
+  margin-top: 4px;
+  letter-spacing: 0.02em;
+}
+/* Orbit ring */
+.orbital-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 640px;
+  height: 640px;
+  margin-left: -320px;
+  margin-top: -320px;
+  border-radius: 50%;
+  border: 1px solid rgba(184,169,138,0.1);
+  pointer-events: none;
+}
+/* Orbiting nodes */
+.orbital-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
+  will-change: transform, opacity;
+}
+.orbital-node-halo {
+  position: absolute;
+  top: 0; left: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,169,138,0.15) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.orbital-node-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-label);
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  pointer-events: none;
+}
+.orbital-node-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(184,169,138,0.35);
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-label);
+  font-size: 18px;
+  color: var(--gold);
+  transform: translate(-50%, -50%);
+  transition: background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  z-index: 1;
+}
+.orbital-node-label {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  opacity: 1 !important;
+  transition: color 0.3s, transform 0.3s;
+  pointer-events: none;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+}
+.orbital-node.active .orbital-node-icon {
+  background: var(--gold);
+  color: var(--bg);
+  border-color: var(--gold);
+  transform: translate(-50%, -50%) scale(1.35);
+  box-shadow: 0 0 28px rgba(184,169,138,0.5);
+}
+.orbital-node.active .orbital-node-label {
+  color: var(--gold-light);
+  transform: translateX(-50%) scale(1.06);
+  top: 50px;
+}
+.orbital-node.related .orbital-node-icon {
+  background: rgba(184,169,138,0.12);
+  border-color: var(--gold);
+  animation: orb-pulse 1.1s ease-in-out infinite;
+}
+.orbital-node.related .orbital-node-label {
+  color: var(--gold-light);
+}
+/* Expanded info card */
+.orbital-card {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  transform: translateX(-50%);
+  width: 240px;
+  background: #080808;
+  border: 1px solid rgba(184,169,138,0.3);
+  padding: 19px 18px 18px;
+  z-index: 400;
+  box-shadow: 0 13px 44px rgba(0,0,0,0.9), 0 0 22px rgba(184,169,138,0.1);
+  backdrop-filter: blur(24px);
+  animation: orb-card-in 0.22s ease;
+  opacity: 1 !important;
+}
+.orbital-card::before {
+  content: '';
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 9px;
+  background: rgba(184,169,138,0.4);
+}
+.orbital-card-title {
+  font-family: var(--font-head);
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.15;
+  opacity: 1;
+}
+.orbital-card-body {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.8;
+  margin-bottom: 0;
+  opacity: 1;
+}
+.orbital-hint {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(184,169,138,0.7);
+  margin-bottom: 24px;
+  margin-top: 0;
+  opacity: 1;
+}
+@keyframes orb-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+@keyframes orb-ping {
+  0% { transform: scale(1); opacity: 0.7; }
+  75%, 100% { transform: scale(2.1); opacity: 0; }
+}
+@keyframes orb-card-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+/* Mobile: stacked list */
+@media (max-width: 768px) {
+  .orbital-section {
+    height: auto;
+    margin: 32px 0 40px;
+    overflow: visible;
+  }
+  .orbital-wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .orbital-ring { display: none; }
+  .orbital-center {
+    position: relative;
+    top: auto; left: auto;
+    transform: none;
+    margin-bottom: 28px;
+  }
+  .orbital-center-core { width: 64px; height: 64px; }
+  .orbital-center-ring:nth-child(1) { width: 80px; height: 80px; }
+  .orbital-center-ring:nth-child(2) { width: 96px; height: 96px; }
+  .orbital-center-inner { width: 29px; height: 29px; }
+  .orbital-center-label { margin-top: 42px; }
+  .orbital-node {
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    z-index: auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .orbital-node-icon {
+    transform: none;
+    position: relative;
+    top: auto; left: auto;
+    margin: 0 auto;
+    width: 48px; height: 48px;
+    font-size: 14px;
+  }
+  .orbital-node.active .orbital-node-icon {
+    transform: scale(1.2);
+  }
+  .orbital-node-label {
+    position: relative;
+    top: auto; left: auto;
+    transform: none;
+    margin-top: 10px;
+    font-size: 16px;
+    white-space: normal;
+    text-align: center;
+  }
+  .orbital-node.active .orbital-node-label {
+    transform: none;
+    top: auto;
+  }
+  .orbital-card {
+    position: relative;
+    top: auto; left: auto;
+    transform: none;
+    width: 100%;
+    max-width: 288px;
+    margin: 12px auto 10px;
+    animation: none;
+  }
+  .orbital-card::before { display: none; }
+  .orbital-hint { font-size: 10px; letter-spacing: 0.12em; margin-bottom: 16px; }
+}
+
+/* ─── SECTION: RESULTS ─────────────────────────────────────────── */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+.results-bottom-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.result-card {
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  transition: border-color 0.25s, transform 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.result-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.result-card:hover { border-color: var(--gold-dim); transform: translateY(-5px); }
+.result-card:hover::before { opacity: 1; }
+.result-card-header { display: flex; flex-direction: column; gap: 6px; }
+.result-name {
+  font-family: var(--font-head);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.2;
+}
+.result-desc {
+  font-family: var(--font-label);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--silver-dim);
+  text-transform: uppercase;
+}
+.result-stat {
+  font-family: var(--font-head);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--gold);
+  line-height: 1.1;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.result-quote {
+  font-family: var(--font-head);
+  font-size: 17px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.72;
+  color: var(--silver-dim);
+  flex: 1;
+}
+
+/* ─── SECTION: TESTIMONIALS ────────────────────────────────────── */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 56px;
+}
+.testi-bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-top: 22px;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.testi-card {
+  background: var(--bg3);
+  border: 1px solid var(--border-silver);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: border-color 0.22s;
+}
+.testi-card:hover { border-color: var(--gold-dim); }
+.testi-stars {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--gold);
+}
+.testi-quote {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.78;
+  color: var(--silver);
+  flex: 1;
+}
+.testi-footer { display: flex; flex-direction: column; gap: 8px; }
+.testi-name {
+  font-family: var(--font-head);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--white);
+}
+.testi-role {
+  font-family: var(--font-label);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--silver);
+  text-transform: uppercase;
+}
+.testi-result {
+  display: inline-block;
+  background: rgba(184,169,138,0.14);
+  border: 1px solid rgba(184,169,138,0.35);
+  font-family: var(--font-label);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: var(--gold-light);
+  padding: 6px 14px;
+  text-transform: uppercase;
+  width: fit-content;
+  font-weight: 700;
+}
+
+/* ─── SECTION: PLANS ───────────────────────────────────────────── */
+.plans-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 56px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.plan-card {
+  background: var(--bg3);
+  border: 1px solid var(--border-silver);
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  transition: border-color 0.25s;
+}
+.plan-card.popular {
+  border-color: var(--gold);
+}
+.plan-card:hover { border-color: var(--gold); }
+.popular-badge {
+  position: absolute;
+  top: -14px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--bg);
+  font-family: var(--font-label);
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  padding: 5px 18px;
+  white-space: nowrap;
+}
+.plan-urgency {
+  font-family: var(--font-label);
+  font-size: 8.5px;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+.plan-name {
+  font-family: var(--font-head);
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 22px;
+  line-height: 1.2;
+}
+.plan-pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.plan-original {
+  font-family: var(--font-head);
+  font-size: 22px;
+  color: var(--silver-dim);
+  text-decoration: line-through;
+  text-decoration-color: var(--silver-dim);
+}
+.plan-price {
+  font-family: var(--font-head);
+  font-size: 52px;
+  font-weight: 500;
+  color: var(--gold);
+  line-height: 1;
+}
+.plan-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border-silver);
+  margin-bottom: 28px;
+}
+.plan-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 36px;
+  flex: 1;
+}
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14.5px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--text);
+}
+.plan-features li::before {
+  content: '→';
+  color: var(--gold);
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ─── SECTION: MEMBERSHIP ──────────────────────────────────────── */
+.membership-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.membership-left { display: flex; flex-direction: column; gap: 28px; }
+.membership-desc {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text);
+}
+.membership-perks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.membership-perks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--text);
+}
+.membership-perks li::before {
+  content: '✦';
+  color: var(--gold);
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.membership-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.mem-price-card {
+  background: var(--bg3);
+  border: 1px solid var(--border-silver);
+  padding: 32px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: border-color 0.22s;
+}
+.mem-price-card:hover { border-color: var(--gold); }
+.mem-price-card.popular { border-color: var(--gold-dim); }
+.mem-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.mem-price-amount {
+  font-family: var(--font-head);
+  font-size: 44px;
+  font-weight: 500;
+  color: var(--gold);
+  line-height: 1;
+}
+.mem-price-period {
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--silver-dim);
+  text-transform: uppercase;
+}
+.mem-price-note {
+  font-size: 13px;
+  color: var(--silver-dim);
+  font-weight: 300;
+}
+.mem-badge {
+  display: inline-block;
+  background: rgba(184,169,138,0.12);
+  border: 1px solid var(--border);
+  font-family: var(--font-label);
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  padding: 5px 12px;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+/* ─── SECTION: FAQ ─────────────────────────────────────────────── */
+.faq-list {
+  max-width: 820px;
+  margin: 56px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border-silver);
+}
+.faq-item:first-child { border-top: 1px solid var(--border-silver); }
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 24px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.faq-q-text {
+  font-family: var(--font-head);
+  font-size: 21px;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.35;
+  transition: color 0.2s;
+}
+.faq-q:hover .faq-q-text { color: var(--gold); }
+.faq-icon {
+  width: 28px; height: 28px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--gold);
+  font-size: 20px;
+  font-weight: 300;
+  transition: transform 0.3s, background 0.2s;
+  font-family: var(--font-body);
+}
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+  background: var(--gold);
+  color: var(--bg);
+}
+.faq-a {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.38s ease;
+}
+.faq-item.open .faq-a { grid-template-rows: 1fr; }
+.faq-a-inner {
+  overflow: hidden;
+}
+.faq-a-text {
+  padding: 0 8px 28px;
+  font-size: 15.5px;
+  font-weight: 400;
+  line-height: 1.82;
+  color: var(--text);
+}
+
+/* ─── SECTION: FINAL CTA ───────────────────────────────────────── */
+.final-cta {
+  padding: 140px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px; height: 600px;
+  background: radial-gradient(ellipse, rgba(184,169,138,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.final-cta .section-head { font-size: clamp(38px, 4.5vw, 62px); }
+.final-cta-sub {
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--text);
+  max-width: 520px;
+  margin: 0 auto 42px;
+  line-height: 1.75;
+}
+.final-cta-secondary {
+  display: block;
+  margin-top: 20px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--silver-dim);
+  transition: color 0.2s;
+}
+.final-cta-secondary:hover { color: var(--gold); }
+.final-cta-secondary span { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ─── FOOTER ───────────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 44px 40px 32px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.footer-logo {
+  font-family: var(--font-label);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--white);
+}
+.footer-social { display: flex; gap: 20px; align-items: center; }
+.footer-social a {
+  display: flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px;
+  border: 1px solid var(--border);
+  color: var(--silver-dim);
+  transition: border-color 0.2s, color 0.2s;
+}
+.footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+.footer-email {
+  font-size: 13px;
+  color: var(--silver-dim);
+  transition: color 0.2s;
+}
+.footer-email:hover { color: var(--gold); }
+.footer-copy {
+  text-align: center;
+  font-size: 11.5px;
+  color: rgba(160,160,160,0.8);
+  padding-top: 20px;
+  border-top: 1px solid var(--border-silver);
+  letter-spacing: 0.06em;
+}
+
+/* ─── HERO ADDITIONS ───────────────────────────────────────────── */
+.hero-credibility {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--silver-dim);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  font-weight: 300;
+}
+
+/* ─── HERO WORD REVEAL ─────────────────────────────────────────── */
+.hw {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(22px);
+  animation: wordUp 0.55s ease forwards;
+}
+@keyframes wordUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── PLAN ADDITIONS ───────────────────────────────────────────── */
+.plan-who {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.72;
+  color: var(--silver-dim);
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-silver);
+}
+.plan-spots {
+  font-family: var(--font-label);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
+.risk-reversal {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--silver-dim);
+  margin-top: 36px;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+  padding: 0 20px;
+}
+
+/* ─── LEAD MAGNET SECTION ──────────────────────────────────────── */
+.lead-section {
+  background: #080808;
+  padding: 120px 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.lead-inner {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.lead-sub {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.78;
+  color: var(--text);
+  max-width: 520px;
+}
+.lead-note {
+  font-size: 12px;
+  color: var(--silver-dim);
+  font-style: italic;
+  margin-top: -8px;
+}
+
+/* ─── BREVO FORM OVERRIDES ──────────────────────────────────────── */
+.sib-form { width: 100%; max-width: 540px; }
+#sib-container { background-color: transparent !important; border-radius: 0 !important; }
+#sib-form .input {
+  background-color: #131313 !important;
+  border: 1px solid rgba(200,200,200,0.2) !important;
+  border-radius: 0 !important;
+  color: #c8c8c8 !important;
+  font-family: var(--font-body) !important;
+  font-size: 15px !important;
+}
+#sib-form .input::placeholder { color: #6a6a6a !important; }
+#sib-form .input:focus { border-color: rgba(184,169,138,0.5) !important; outline: none !important; }
+#sib-form .entry__label {
+  color: #c8c8c8 !important;
+  font-family: var(--font-label) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+}
+#sib-form .sib-form-block__button,
+#sib-form .sib-form-block__button-with-loader,
+#sib-container .sib-form-block__button,
+#sib-container .sib-form-block__button-with-loader {
+  background-color: #b8a98a !important;
+  color: #000000 !important;
+  font-family: 'Syncopate', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  border-radius: 0 !important;
+  border: none !important;
+  padding: 18px 40px !important;
+  width: 100% !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease !important;
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+#sib-form .sib-form-block__button:hover,
+#sib-container .sib-form-block__button:hover { background-color: #cbbf9e !important; color: #000000 !important; }
+/* Force button text visible, hide all Brevo loader/icon elements */
+.brevo-btn-text {
+  display: inline !important;
+  visibility: visible !important;
+  color: #000000 !important;
+  font-family: 'Syncopate', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  opacity: 1 !important;
+}
+.sib-hide-loader-icon { display: none !important; }
+.sib-loader { display: none !important; }
+.sib-form-block__button svg { display: none !important; }
+.clickable__icon { display: none !important; }
+.progress-indicator__icon { display: none !important; }
+.sib-form-message-panel { border-radius: 0 !important; }
+.entry__label::after { display: none !important; }
+[data-required]::after { display: none !important; }
+.sib-form .entry__label .required { display: none !important; }
+
+/* ─── TESTIMONIAL TRANSITION LINE ──────────────────────────────── */
+.testi-transition {
+  text-align: center;
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 24px;
+  color: var(--gold);
+  line-height: 1.55;
+  max-width: 720px;
+  margin: 64px auto 0;
+  padding: 0 20px;
+  opacity: 0.9;
+}
+
+/* ─── STORY ENDING ─────────────────────────────────────────────── */
+.story-ending {
+  color: var(--silver);
+  font-size: 16.5px;
+  font-weight: 400;
+  line-height: 1.8;
+  margin-top: 8px;
+}
+
+/* ─── MEMBERSHIP HOOK ──────────────────────────────────────────── */
+.mem-hook {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--gold);
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+/* ─── MARQUEE DIAMOND ──────────────────────────────────────────── */
+.marquee-item::after {
+  content: '◆';
+  color: var(--gold);
+  font-size: 7px;
+  opacity: 0.75;
+  margin-left: 0;
+  vertical-align: middle;
+}
+
+/* ─── CARD HOVER LIFT ──────────────────────────────────────────── */
+.result-card,
+.method-card,
+.testi-card,
+.prob-card,
+.mem-price-card {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.result-card:hover,
+.method-card:hover,
+.testi-card:hover,
+.prob-card:hover,
+.mem-price-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.45);
+}
+/* Plan card already has transition, extend it */
+.plan-card {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.plan-card:hover { transform: translateY(-6px); box-shadow: 0 24px 64px rgba(0,0,0,0.45); }
+
+/* Result card gold left border */
+.result-card {
+  border-left: 2px solid var(--gold-dim);
+}
+.result-card:hover { border-left-color: var(--gold); }
+.result-card:hover::before { opacity: 1; }
+
+/* ─── BUTTON HOVER ──────────────────────────────────────────────── */
+.btn-magnetic {
+  position: relative;
+  transition: filter 0.2s ease, transform 0.2s ease, background 0.22s, border-color 0.22s, color 0.22s;
+}
+.btn-magnetic:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+/* ─── PARALLAX CONTAINER ───────────────────────────────────────── */
+.hero-right { will-change: transform; }
+
+/* ─── VALUE SECTION ────────────────────────────────────────────── */
+.value-section {
+  margin-top: 72px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  padding: 56px 52px;
+  position: relative;
+  overflow: hidden;
+}
+.value-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.value-section-head {
+  font-family: var(--font-head);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 400;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 48px;
+}
+.value-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.value-col { display: flex; flex-direction: column; gap: 16px; }
+.value-num {
+  font-family: var(--font-label);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.value-col-title {
+  font-family: var(--font-head);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.2;
+}
+.value-col-bar {
+  width: 32px; height: 2px;
+  background: var(--gold);
+}
+.value-col-body {
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+/* ─── SCROLL ANIMATIONS ────────────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(38px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.22s; }
+.delay-3 { transition-delay: 0.34s; }
+.delay-4 { transition-delay: 0.46s; }
+.delay-5 { transition-delay: 0.58s; }
+
+/* ─── MOBILE RESPONSIVE ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  :root { --nav-h: 64px; }
+
+  /* Base */
+  body { cursor: auto; }
+
+  /* Container / spacing */
+  .container { padding: 0 24px; }
+  .section { padding: 60px 0; }
+
+  /* Headings — 30% smaller */
+  .section-head { font-size: clamp(26px, 7vw, 38px); }
+  .hero-headline { font-size: clamp(32px, 8.5vw, 46px); }
+
+  /* Nav */
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-inner { padding: 0 24px; }
+
+  /* Hero */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    padding: 50px 24px 36px;
+    gap: 36px;
+  }
+  .hero-right { order: 1; }   /* photo BELOW text on mobile */
+  .hero-transform-single { min-height: 260px; }
+  .hero-transform-single img { min-height: 260px; }
+  .hero-stats { gap: 20px; flex-wrap: wrap; }
+  .hero-btns { flex-direction: column; align-items: stretch; }
+  .hero-btns .btn-solid,
+  .hero-btns .btn-ghost { width: 100%; text-align: center; display: block; }
+  .hero-stat-num { font-size: 28px; }
+  .hero-urgency {
+    padding: 14px 24px;
+    font-size: 9px;
+    color: var(--gold);
+    background: rgba(184,169,138,0.09);
+  }
+
+  /* Problem section */
+  .problem-grid { grid-template-columns: 1fr; gap: 40px; }
+  .problem-cards { grid-template-columns: 1fr; }
+
+  /* Story section */
+  .story-two-col { grid-template-columns: 1fr; gap: 0; }
+  .story-two-col > * + * { margin-top: 0; }
+  .story-photos-col,
+  .story-profile-col { min-height: 280px; }
+  .story-photos-col .img-real,
+  .story-profile-col .img-real { min-height: 280px; }
+  .story-photos-col .img-real img,
+  .story-profile-col .img-real img { min-height: 280px; }
+  .story-text-full { padding: 36px 24px 0; }
+
+  /* Method */
+  .method-cards { grid-template-columns: 1fr; }
+
+  /* Results */
+  .results-grid { grid-template-columns: 1fr; }
+  .results-bottom-row { grid-template-columns: 1fr; max-width: 100%; }
+
+  /* Testimonials */
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testi-bottom { grid-template-columns: 1fr; max-width: 100%; }
+
+  /* Plans */
+  .plans-grid { grid-template-columns: 1fr; max-width: 100%; }
+  .plan-card { padding: 36px 24px; }
+  .btn-solid,
+  .btn-ghost { width: 100%; text-align: center; display: block; }
+
+  /* Membership */
+  .membership-inner { grid-template-columns: 1fr; gap: 40px; }
+
+  /* FAQ */
+  .faq-list { padding: 0; }
+  .faq-q-text { font-size: 17px; }
+  .faq-a-text { font-size: 15px; padding: 0 4px 24px; word-break: break-word; overflow-wrap: break-word; }
+
+  /* Value section */
+  .value-section { padding: 36px 24px; }
+  .value-cols { grid-template-columns: 1fr; gap: 32px; }
+
+  /* Lead magnet */
+  .lead-section { padding: 60px 0; }
+  .lead-inner { padding: 0 24px; }
+
+  /* Plans */
+  .plan-who { font-size: 13px; }
+  .risk-reversal { font-size: 12px; }
+
+  /* Final CTA */
+  .final-cta { padding: 80px 24px; }
+  .final-cta .btn-solid { width: 100%; }
+
+  /* Disable parallax transform on mobile */
+  .hero-right { transform: none !important; will-change: auto; }
+
+  /* Footer */
+  footer { padding: 36px 24px 24px; }
+  .footer-inner { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── CURSOR ──────────────────────────────────────────────────── -->
+
+<!-- ─── NAV ────────────────────────────────────────────────────── -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">ALEND DOSKY</a>
+    <ul class="nav-links">
+      <li><a href="#problem">Why You're Stuck</a></li>
+      <li><a href="#method">The Solution</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#plans">Plans</a></li>
+      <li><a href="#membership">Membership</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#plans" class="nav-cta">Get Your Plan</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── MOBILE MENU ─────────────────────────────────────────────── -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#problem" class="mobile-link">Why You're Stuck</a>
+  <a href="#method" class="mobile-link">The Solution</a>
+  <a href="#testimonials" class="mobile-link">Testimonials</a>
+  <a href="#plans" class="mobile-link">Plans</a>
+  <a href="#membership" class="mobile-link">Membership</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="#plans" class="nav-cta">Get Your Plan</a>
+</div>
+
+<!-- ─── HERO ────────────────────────────────────────────────────── -->
+<section class="hero" id="home">
+  <div class="hero-grid">
+    <!-- LEFT: Copy -->
+    <div class="hero-left">
+      <p class="hero-tag fade-up">Fat Loss Without The Sacrifice</p>
+      <p class="hero-credibility fade-up">Biology-based fat loss coaching for people who actually have lives</p>
+      <h1 class="hero-headline">
+        <span class="hw">Busy,</span> <span class="hw">frustrated</span> <span class="hw">&amp;</span> <span class="hw">done</span> <span class="hw">starting</span> <em><span class="hw">over</span> <span class="hw">again.</span></em>
+      </h1>
+      <p class="hero-sub fade-up delay-2">
+        You don't need to rebuild your entire life to lose the weight. I found what every coach missed and built a system that works around your life, not instead of it.
+      </p>
+      <div class="hero-btns fade-up delay-3">
+        <a href="#plans" class="btn-solid btn-magnetic">GET YOUR PLAN</a>
+        <a href="#method" class="btn-ghost">See The Method →</a>
+      </div>
+      <div class="hero-stats fade-up delay-4">
+        <div>
+          <div class="hero-stat-num" data-count="22" data-suffix="kg">22kg</div>
+          <div class="hero-stat-sub">(48.5 lbs)</div>
+          <div class="hero-stat-label">Biggest Client Transformation</div>
+        </div>
+        <div>
+          <div class="hero-stat-num" data-count="48" data-suffix="h">48h</div>
+          <div class="hero-stat-label">Plan Delivered To You</div>
+        </div>
+        <div>
+          <div class="hero-stat-num" data-count="100" data-suffix="%">100%</div>
+          <div class="hero-stat-label">Custom Built For You</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Before/After Transformation Image -->
+    <div class="hero-right fade-up delay-2">
+      <div class="transformation-frame">
+        <div class="hero-transform-single">
+          <img src="brand.assets/transformation 2 pics.jpg" alt="Client transformation">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Urgency Bar -->
+  <div class="hero-urgency fade-up delay-5">
+    🔥 Currently working with 7 of 10 clients. 3 spots remaining at launch pricing.
+  </div>
+</section>
+
+<!-- ─── MARQUEE ──────────────────────────────────────────────────── -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <div class="marquee-item">No Calorie Counting</div>
+    <div class="marquee-item">Anti-Inflammatory Nutrition</div>
+    <div class="marquee-item">Built For Busy People</div>
+    <div class="marquee-item">Hormonal Optimization</div>
+    <div class="marquee-item">Real Sustainable Results</div>
+    <div class="marquee-item">No Gym Obsession</div>
+    <div class="marquee-item">Strategic Cheat Meals</div>
+    <div class="marquee-item">Delivered in 48 Hours</div>
+    <!-- Duplicate for seamless loop -->
+    <div class="marquee-item">No Calorie Counting</div>
+    <div class="marquee-item">Anti-Inflammatory Nutrition</div>
+    <div class="marquee-item">Built For Busy People</div>
+    <div class="marquee-item">Hormonal Optimization</div>
+    <div class="marquee-item">Real Sustainable Results</div>
+    <div class="marquee-item">No Gym Obsession</div>
+    <div class="marquee-item">Strategic Cheat Meals</div>
+    <div class="marquee-item">Delivered in 48 Hours</div>
+  </div>
+</div>
+
+<!-- ─── WHY YOU'RE STUCK ─────────────────────────────────────────── -->
+<section class="section alt" id="problem">
+  <div class="container">
+    <div class="problem-grid">
+      <div>
+        <span class="section-tag fade-up">Why Nothing Worked</span>
+        <h2 class="section-head fade-up delay-1">The real reason you're stuck</h2>
+        <p class="problem-body fade-up delay-2">
+          It's not calories. It's not discipline. The foods you think are healthy (gluten, dairy, seed oils, soy, excess fruit, sugar) are causing chronic inflammation. Add nutritional deficiencies and hormonal imbalances on top of that, and your body physically cannot burn fat even in a caloric deficit. Every coach giving you macros and a workout plan is treating the symptoms. I fix the root cause.
+        </p>
+      </div>
+      <div class="problem-cards">
+        <div class="prob-card fade-up delay-1">
+          <div class="prob-card-icon">⚡</div>
+          <div class="prob-card-title">You've tried multiple diets</div>
+          <div class="prob-card-desc">The plans change but the result stays the same. You're not the problem. The approach is.</div>
+        </div>
+        <div class="prob-card fade-up delay-2">
+          <div class="prob-card-icon">🔋</div>
+          <div class="prob-card-title">You feel tired all the time</div>
+          <div class="prob-card-desc">Chronic inflammation drains your energy before you even get started. It's not laziness.</div>
+        </div>
+        <div class="prob-card fade-up delay-3">
+          <div class="prob-card-icon">⏱</div>
+          <div class="prob-card-title">You don't have time for complex plans</div>
+          <div class="prob-card-desc">Macro tracking, meal prepping, 2-hour gym sessions. None of it fits your real life.</div>
+        </div>
+        <div class="prob-card fade-up delay-4">
+          <div class="prob-card-icon">💸</div>
+          <div class="prob-card-title">You're scared to waste money again</div>
+          <div class="prob-card-desc">You've invested before and got nothing. This time the investment has a reason behind every decision.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── YOUR STORY ───────────────────────────────────────────────── -->
+<section class="section" id="story">
+  <div class="container">
+    <div class="story-layout">
+      <div>
+        <span class="section-tag fade-up">I Was My First Client</span>
+        <h2 class="section-head fade-up delay-1">I built this in my own life. Not a lab.</h2>
+      </div>
+
+      <!-- Transformation photo — full width, single image -->
+      <div class="story-photo-full fade-up delay-1">
+        <div class="img-real" style="min-height:480px;width:100%;">
+          <img src="brand.assets/before and after pic.png" alt="Alend Dosky transformation" style="object-position:center center;width:100%;">
+        </div>
+      </div>
+
+      <!-- Story text — full width below photo -->
+      <div class="story-text-full fade-up delay-2">
+        <div class="story-text">
+          <p>I didn't build this program in a lab. I built it in my own life, while dealing with 4 herniated discs, nerve impingement, and carbon monoxide poisoning that left me wrecked.</p>
+          <p>I followed all the influencers' advice and still felt fat, inflamed, exhausted, and stuck. Every diet made me feel worse. And no one was talking about what I was really going through: chronic inflammation, real pain, and a body that just wouldn't cooperate.</p>
+          <p>Once I figured out how to fix inflammation, optimize food timing, and align workouts with real life, everything changed. Now I use that exact framework to help others who don't have time to waste on guesswork or extremes. No fluff. No pain-worship. Just systems that work, for people who actually have lives.</p>
+          <p class="story-ending">That system is what you get when you work with me. Built around your life. Explained so you understand it. Ready in 48 hours.</p>
+        </div>
+        <div>
+          <a href="https://www.alenddosky.com/orderplans" class="btn-ghost" style="width:fit-content;display:inline-block;">Get My Exact Protocol →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── THE METHOD ───────────────────────────────────────────────── -->
+<section class="section alt" id="method">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="section-tag fade-up">The System</span>
+      <h2 class="section-head fade-up delay-1">How it actually works</h2>
+    </div>
+    <!-- Orbital Timeline -->
+    <p class="orbital-hint fade-up">Click a node to expand · Click background to close</p>
+    <div class="orbital-section fade-up delay-1" id="orbital-timeline">
+      <div class="orbital-wrapper" id="orbital-wrapper">
+        <!-- Center node -->
+        <div class="orbital-center">
+          <div class="orbital-center-core">
+            <div class="orbital-center-ring"></div>
+            <div class="orbital-center-ring"></div>
+            <div class="orbital-center-inner"></div>
+          </div>
+          <div class="orbital-center-label">Your Body</div>
+          <div class="orbital-center-sub">Click any node to explore</div>
+        </div>
+        <!-- Orbit ring -->
+        <div class="orbital-ring"></div>
+        <!-- Orbiting nodes (positioned by JS) -->
+        <div class="orbital-node" id="onode-1">
+          <div class="orbital-node-halo" style="width:109px;height:109px;"></div>
+          <div class="orbital-node-icon"><span class="orbital-node-num">3</span></div>
+          <div class="orbital-node-label">Inflammation</div>
+        </div>
+        <div class="orbital-node" id="onode-2">
+          <div class="orbital-node-halo" style="width:99px;height:99px;"></div>
+          <div class="orbital-node-icon"><span class="orbital-node-num">1</span></div>
+          <div class="orbital-node-label">Nutrition Plan</div>
+        </div>
+        <div class="orbital-node" id="onode-3">
+          <div class="orbital-node-halo" style="width:90px;height:90px;"></div>
+          <div class="orbital-node-icon"><span class="orbital-node-num">4</span></div>
+          <div class="orbital-node-label">Supplements</div>
+        </div>
+        <div class="orbital-node" id="onode-4">
+          <div class="orbital-node-halo" style="width:96px;height:96px;"></div>
+          <div class="orbital-node-icon"><span class="orbital-node-num">2</span></div>
+          <div class="orbital-node-label">Workouts</div>
+        </div>
+        <div class="orbital-node" id="onode-5">
+          <div class="orbital-node-halo" style="width:115px;height:115px;"></div>
+          <div class="orbital-node-icon"><span class="orbital-node-num">5</span></div>
+          <div class="orbital-node-label">Results</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What you actually receive -->
+    <div class="value-section fade-up">
+      <h3 class="value-section-head">What you actually receive</h3>
+      <div class="value-cols">
+        <div class="value-col fade-up delay-1">
+          <div class="value-num">01 / Nutrition</div>
+          <div class="value-col-bar"></div>
+          <div class="value-col-title">Your Exact Food Plan</div>
+          <p class="value-col-body">A fully customized anti-inflammatory nutrition plan that tells you exactly what to eat, how much, and when. Every food on your plan is there for a specific reason, with a clear explanation of what it does for your body and mind. No guessing, ever.</p>
+        </div>
+        <div class="value-col fade-up delay-2">
+          <div class="value-num">02 / Supplements</div>
+          <div class="value-col-bar"></div>
+          <div class="value-col-title">Built Around Your Body</div>
+          <p class="value-col-body">A supplement plan built around your specific needs: low energy, low libido, stress, hormonal issues, anxiety, injuries, or other health challenges. Nothing generic. Everything targeted.</p>
+        </div>
+        <div class="value-col fade-up delay-3">
+          <div class="value-num">03 / Training</div>
+          <div class="value-col-bar"></div>
+          <div class="value-col-title">Workouts With Purpose</div>
+          <p class="value-col-body">A tailor-made workout plan with a video tutorial for every exercise, personal technique notes to avoid injury, and exact rest times, sets, reps, and tempo for each movement. You always know exactly what to do and why.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─────────────────────────────────────────────── -->
+<section class="section alt" id="testimonials">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="section-tag fade-up">Testimonials</span>
+      <h2 class="section-head fade-up delay-1">What clients say</h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <!-- Card 1 -->
+      <div class="testi-card fade-up delay-1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I honestly didn't think I'd ever find something that actually worked long-term. I've tried so many diets before, always with mixed results. But working with Alend was different. He didn't just tell me what to eat, he explained why it mattered, especially with things like insulin resistance, which I'd never really understood before. That changed everything. I ended up losing 22 kilos (48.5 lbs) in about four months, and it didn't even feel like I was suffering through it."</p>
+        <div class="testi-footer">
+          <div class="testi-name">David M.</div>
+          <div class="testi-role">36 · Entrepreneur &amp; Father</div>
+          <span class="testi-result">22kg (48.5 lbs) lost in 4 months</span>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="testi-card fade-up delay-2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I've spent my whole adult life taking care of everyone but myself. Long shifts, little sleep, stress eating and no diet ever worked long-term. But Alend's system was eye-opening. It wasn't just eat this, train that. He explained what was going on inside my body, and for the first time it made sense. I lost 7kg (15.4 lbs) in the first month without it taking over my life."</p>
+        <div class="testi-footer">
+          <div class="testi-name">Natasha L</div>
+          <div class="testi-role">41 · Nurse &amp; Mother</div>
+          <span class="testi-result">7kg (15.4 lbs) lost in 1 month</span>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="testi-card fade-up delay-3">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I've dropped 24 lbs in just over a month, my energy is back, and I finally feel in control again. Alend's approach was the first one that actually worked for my life. No more guessing, no more obsessing. He gave me a system that fit my schedule, explained what to eat and why, and helped me understand my body for the first time. I wish I had this years ago."</p>
+        <div class="testi-footer">
+          <div class="testi-name">Eliana Kaplan</div>
+          <div class="testi-role">31 · Corporate Consultant &amp; Mother</div>
+          <span class="testi-result">24 lbs lost · 1 month</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-bottom">
+      <!-- Card 4 -->
+      <div class="testi-card fade-up delay-1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I work 60+ hours a week, sleep like crap, live on caffeine, and no matter how clean I ate, I just kept gaining belly fat. What Alend gave me was clarity. I finally understood why my body was stuck. Not because I was lazy. Because my system was overloaded and no one ever taught me how to fix it. I've lost 10 kilos (22 lbs) in 6 weeks, I sleep through the night, and my wife said I look younger."</p>
+        <div class="testi-footer">
+          <div class="testi-name">Daniel Rothman</div>
+          <div class="testi-role">41 · Startup Founder &amp; Dad</div>
+          <span class="testi-result">10kg (22 lbs) lost in 6 weeks</span>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="testi-card fade-up delay-2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I've dropped 31 lbs in 9 weeks, without starving or tracking, and I finally feel like I'm in control of food instead of the other way around. Alend's system showed me what was actually going on in my body. It wasn't just about calories. It was hormones, timing, and inflammation. He made it simple and explained everything. I can't recommend this enough, especially if you're a high performer who's sick of wasting time."</p>
+        <div class="testi-footer">
+          <div class="testi-name">Rebecca Feldman</div>
+          <div class="testi-role">48 · Marketing Executive</div>
+          <span class="testi-result">31 lbs lost · 9 weeks</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── LEAD MAGNET ──────────────────────────────────────────────── -->
+<section class="lead-section" id="freeguide">
+  <div class="lead-inner">
+    <span class="section-tag fade-up">Free Resource</span>
+    <h2 class="section-head fade-up delay-1">Not ready yet? Start here.</h2>
+    <p class="lead-sub fade-up delay-2">Download the free guide <em>Why You're Stuck</em> that explains exactly why nothing has worked and what to do about it.</p>
+
+    <div id="free-guide-form" style="width:100%;max-width:540px;">
+      <input
+        type="text"
+        id="guide-name"
+        placeholder="Your first name"
+        style="width:100%;padding:18px 24px;background:#131313;border:1px solid rgba(200,200,200,0.15);color:#c8c8c8;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;margin-bottom:2px;box-sizing:border-box;"
+      />
+      <input
+        type="email"
+        id="guide-email"
+        placeholder="Your email address"
+        style="width:100%;padding:18px 24px;background:#131313;border:1px solid rgba(200,200,200,0.15);color:#c8c8c8;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;margin-bottom:2px;box-sizing:border-box;"
+      />
+      <button
+        id="guide-submit"
+        style="width:100%;padding:18px 40px;background:#b8a98a;color:#000000;font-family:'Syncopate',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;border:none;cursor:pointer;"
+      >
+        GET THE FREE GUIDE
+      </button>
+      <div id="guide-message" style="display:none;margin-top:16px;padding:16px 24px;font-family:'DM Sans',sans-serif;font-size:13px;text-align:center;"></div>
+    </div>
+
+    <iframe name="brevo-hidden-frame" style="display:none;"></iframe>
+
+    <form
+      id="brevo-hidden-form"
+      method="POST"
+      action="https://55502482.sibforms.com/serve/MUIFAMj36vkj_MekL_Dni_04CqFtjVe13lRQOwZqHZa7k3HTWZbwSt8ygKCxa1wnS0HoZcCygHjCvCRr0if2zgJKjDGRSFDHOGms72HQOTRjgmYdbQQ2HRDmwckj8ohwecvaL1JXHdDgWkIKsaK1B_nVpSYZ3I15zZb2ouIdk0ZPXH7yINM9b8xqLbqCnCrD4XM_QRvH1qHraZQwYg=="
+      target="brevo-hidden-frame"
+      style="display:none;"
+    >
+      <input type="text" name="FIRSTNAME" id="hidden-firstname" />
+      <input type="text" name="EMAIL" id="hidden-email" />
+      <input type="text" name="email_address_check" value="" />
+      <input type="hidden" name="locale" value="en" />
+      <button type="submit" id="hidden-submit">Send</button>
+    </form>
+
+    <p class="lead-note fade-up delay-4">The same insight that changed everything for my clients. Free.</p>
+  </div>
+</section>
+
+<!-- ─── PLANS ────────────────────────────────────────────────────── -->
+<section class="section" id="plans">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="section-tag fade-up">Investment</span>
+      <h2 class="section-head fade-up delay-1">Choose your path</h2>
+    </div>
+    <div class="plans-grid">
+
+      <!-- Plan 1 -->
+      <div class="plan-card fade-up delay-1">
+        <div class="plan-urgency">🔥 Launch Pricing</div>
+        <div class="plan-name">Starter</div>
+        <p class="plan-who">For you that's ready to take control on your own. You want a proven system handed to you: every meal, every workout, every supplement explained. You bring the discipline to follow it without hand-holding. You get the full blueprint. You drive the results.</p>
+        <div class="plan-pricing">
+          <span class="plan-original">$300</span>
+          <span class="plan-price">$149</span>
+        </div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>12-week complete system</li>
+          <li>Exact foods, amounts and timing. No tracking, no starving</li>
+          <li>Workouts built for your life. Gym or no gym, video tutorials included</li>
+          <li>Supplement plan for hormones, fat-loss, energy and libido</li>
+          <li>Every choice explained so you understand what you're doing and why</li>
+          <li>Delivered in 48 hours</li>
+        </ul>
+        <a href="https://buy.stripe.com/6oE6qCf3w4684qAfZ1" class="btn-ghost btn-magnetic" style="width:100%;text-align:center;display:block;">Get Started</a>
+      </div>
+
+      <!-- Plan 2: Popular -->
+      <div class="plan-card popular fade-up delay-2">
+        <span class="popular-badge">MOST POPULAR</span>
+        <div class="plan-urgency">🔥 Launch Pricing</div>
+        <div class="plan-spots">Currently working with 7 of 10 clients. 3 spots remaining at this price.</div>
+        <div class="plan-name">The Elite Transformation</div>
+        <p class="plan-who">For high performers who want to outsource the thinking entirely. You don't have time to figure it out. You want someone who has done this hundreds of times to build everything around your specific life and stay by your side the entire way.</p>
+        <div class="plan-pricing">
+          <span class="plan-original">$700</span>
+          <span class="plan-price">$349</span>
+        </div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>12-week done-with-you experience</li>
+          <li>Everything from the Starter plan</li>
+          <li>Onboarding call plus monthly progress reviews</li>
+          <li>Unlimited voice and text support for 12 weeks</li>
+          <li>Real-time adjustments for travel, stress and sleep issues</li>
+          <li>12-hour priority response window</li>
+        </ul>
+        <a href="https://buy.stripe.com/8wM5my6x0byAf5e28c" class="btn-solid btn-magnetic" style="width:100%;text-align:center;display:block;">Apply Now</a>
+      </div>
+
+    </div>
+
+    <!-- Risk reversal -->
+    <p class="risk-reversal fade-up">If you follow the plan and see zero results in 30 days, I will personally refund you.</p>
+
+  </div>
+</section>
+
+<!-- ─── MEMBERSHIP ───────────────────────────────────────────────── -->
+<section class="section alt" id="membership">
+  <div class="container">
+    <div class="membership-inner">
+      <div class="membership-left">
+        <div>
+          <span class="section-tag fade-up">Membership</span>
+          <h2 class="section-head fade-up delay-1">Stay sharp. Stay lean.</h2>
+          <p class="fade-up delay-2" style="font-size:12px;color:var(--silver-dim);font-family:var(--font-label);letter-spacing:0.1em;margin-top:-8px;margin-bottom:0;">Content delivered via The Lean Edge private platform</p>
+        </div>
+        <div class="fade-up delay-2">
+          <p class="mem-hook">Most people get results then slowly drift back to old habits.</p>
+          <p class="mem-hook">The Lean Edge exists so that never happens to you.</p>
+        </div>
+        <p class="membership-desc fade-up delay-3">
+          You need a proven system that keeps you accountable, educated, and dialed in. This membership gives you the tools, support, and content to keep your body sharp, even on your busiest weeks.
+        </p>
+        <ul class="membership-perks fade-up delay-3">
+          <li>New workouts every month built for fast results, not burnout</li>
+          <li>Dirty but Clean meals that crush cravings and keep you lean</li>
+          <li>Quick courses on gut health, hormones, and fat-burning habits</li>
+          <li>Live weekly Q&amp;A where I answer everything personally</li>
+          <li>Exclusive protocols, recipes, and performance tools added regularly</li>
+        </ul>
+      </div>
+      <div class="membership-right">
+        <div class="mem-price-card fade-up delay-1">
+          <div class="mem-price-row">
+            <span class="mem-price-amount">$27</span>
+            <span class="mem-price-period">/ month</span>
+          </div>
+          <p class="mem-price-note">Cancel anytime, no contracts</p>
+          <a href="https://whop.com/the-lean-edge/" class="btn-ghost" style="width:100%;text-align:center;display:block;">Join The Lean Edge</a>
+        </div>
+        <div class="mem-price-card popular fade-up delay-2">
+          <div class="mem-price-row">
+            <span class="mem-price-amount">$197</span>
+            <span class="mem-price-period">/ year</span>
+          </div>
+          <p class="mem-price-note">Save 40%, best value</p>
+          <span class="mem-badge">Best Value</span>
+          <a href="https://whop.com/the-lean-edge/" class="btn-solid" style="width:100%;text-align:center;display:block;">Join The Lean Edge</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ──────────────────────────────────────────────────────── -->
+<section class="section" id="faq">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="section-tag fade-up">FAQ</span>
+      <h2 class="section-head fade-up delay-1">Common questions</h2>
+    </div>
+    <div class="faq-list fade-up delay-2">
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-text">I've tried everything. Why would this actually work for me?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p class="faq-a-text">Because we're not just changing your calories, we're fixing your system. You've probably been told to eat clean and move more. But if your hormones are wrecked and your body is inflamed, it won't matter what you eat. You can't burn fat. This plan fixes the real reason you're stuck: inflammation and insulin resistance. Fix those, and fat loss becomes the natural result.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-text">How much weight will I realistically lose and how fast?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p class="faq-a-text">Most clients lose 6 to 10 kg (13 to 22 lbs) in the first month if male, and 4 to 8 kg (9 to 18 lbs) if female. You'll drop weight quickly without wrecking your metabolism, starving, or gaining it all back. This is a complete reset of your fat-burning system, not a short-term detox.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-text">Do I have to track calories or weigh food all day?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p class="faq-a-text">No. I do that part for you. I tell you exactly what to eat, how much, and when, based on your body and your schedule. No calorie apps. No spreadsheets. Just open your phone and follow the plan.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-text">Can I do this without a gym or equipment?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p class="faq-a-text">Yes. You tell me what you have access to and I'll build your training plan around that. Busy professionals, travelers, and parents have all crushed results without ever stepping foot in a gym. But the gym will yield faster and better results.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-text">My schedule is crazy. How do I even stick to this?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p class="faq-a-text">That's exactly who this is built for. Every part of the plan is designed to run in the background of your life. Work late? Have kids? Traveling? We adjust and adapt so you can stick to it without it becoming a second job.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-text">Am I going to be starving or craving junk the whole time?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p class="faq-a-text">No, because this isn't a calorie prison. You'll be eating anti-inflammatory, hormone-friendly foods that satisfy you and crush cravings while maximizing fat loss. You'll get more energy, better mood, and fewer crashes. I even allow strategic cheat meals.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-text">What if I have food allergies or hate certain foods?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p class="faq-a-text">You'll fill out a detailed intake form where you tell me what foods you love or can't stand, any allergies, intolerances, and lifestyle habits. Your plan is built 100% around you. No generic PDFs you have to force yourself to follow.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-text">What's the difference between the $149 and $349 plans?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p class="faq-a-text">The $149 plan is custom-built, delivered once, and you follow it independently. The $349 plan is for people who want to outsource the entire process. You get daily voice and text support, real-time adjustments when life gets in the way, and priority access to me. One is a complete blueprint you execute yourself. The other is full coaching.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-text">Will I gain the weight back after this?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p class="faq-a-text">This isn't a quick fix or a juice cleanse. It's a reset of your metabolism and hormones. When your body starts working right, fat loss becomes natural, not forced. You'll have the system to keep the results, stay in shape year-round, and never start over again.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-q-text">Do you really get it? Have you actually struggled?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p class="faq-a-text">Yes. I was my first client. Four herniated discs, carbon monoxide poisoning, hormonal issues, and inflammation that made everything harder. I did the influencer routines, the clean eating, the cardio, and stayed stuck at 126 kg (278 lbs). This plan is what actually worked for me. Now I give it to people who are done wasting time and ready to feel good again.</p></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ─────────────────────────────────────────────────── -->
+<section class="final-cta" id="cta">
+  <div class="container" style="position:relative;z-index:1;">
+    <span class="section-tag fade-up" style="margin-left:auto;margin-right:auto;display:block;text-align:center;width:fit-content;">Ready</span>
+    <h2 class="section-head fade-up delay-1" style="max-width:700px;margin:0 auto 24px;">
+      You're one plan away from never starting over again.
+    </h2>
+    <p class="final-cta-sub fade-up delay-2">
+      Let me build it. You just follow it. No guessing. No chaos. Just results. Delivered in 48 hours.
+    </p>
+    <div class="fade-up delay-3">
+      <a href="https://buy.stripe.com/6oE6qCf3w4684qAfZ1" class="btn-solid btn-magnetic" style="font-size:11px;padding:18px 40px;">Get Your Custom Plan</a>
+      <a href="https://buy.stripe.com/8wM5my6x0byAf5e28c" class="final-cta-secondary">Want full coaching support? <span>Get the $349 plan →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ───────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">ALEND DOSKY</span>
+    <div class="footer-social">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/dosky.alend" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+      </a>
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@DoskyAlend" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.57A2.78 2.78 0 0 0 3.41 19.5C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+          <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
+        </svg>
+      </a>
+    </div>
+    <a href="mailto:Alenddoskycoaching@gmail.com" class="footer-email">Alenddoskycoaching@gmail.com</a>
+  </div>
+  <p class="footer-copy">© 2026 Alend Dosky. All rights reserved.</p>
+</footer>
+
+<!-- ─── JAVASCRIPT ───────────────────────────────────────────────── -->
+<script>
+const isMobile = () => window.innerWidth <= 768 || ('ontouchstart' in window);
+
+// ── Hero Word Reveal ───────────────────────────────────────────────
+(function() {
+  document.querySelectorAll('.hero-headline .hw').forEach((el, i) => {
+    el.style.animationDelay = (0.3 + i * 0.08) + 's';
+  });
+})();
+
+
+// ── Sticky Nav ─────────────────────────────────────────────────────
+(function() {
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+})();
+
+// ── Mobile Menu ────────────────────────────────────────────────────
+(function() {
+  const btn   = document.getElementById('hamburger');
+  const menu  = document.getElementById('mobileMenu');
+  const links = menu.querySelectorAll('a');
+  const spans = btn.querySelectorAll('span');
+  btn.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    spans[0].style.transform = open ? 'rotate(45deg) translate(4.5px,4.5px)' : '';
+    spans[1].style.opacity   = open ? '0' : '1';
+    spans[2].style.transform = open ? 'rotate(-45deg) translate(4.5px,-4.5px)' : '';
+  });
+  links.forEach(link => link.addEventListener('click', () => {
+    menu.classList.remove('open');
+    spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+  }));
+})();
+
+// ── Scroll Fade-Up Animations ──────────────────────────────────────
+(function() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+})();
+
+// ── Counter Animation ──────────────────────────────────────────────
+(function() {
+  const counters = document.querySelectorAll('.hero-stat-num[data-count]');
+  const ease = t => t < 0.5 ? 2*t*t : -1+(4-2*t)*t;
+
+  const animate = (el) => {
+    const target   = parseFloat(el.dataset.count);
+    const suffix   = el.dataset.suffix || '';
+    const duration = 2000;
+    const decimals = target % 1 !== 0 ? 1 : 0;
+    let start = null;
+    const step = ts => {
+      if (!start) start = ts;
+      const progress = Math.min((ts - start) / duration, 1);
+      const val = target * ease(progress);
+      el.textContent = val.toFixed(decimals) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { animate(e.target); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => observer.observe(c));
+})();
+
+
+// ── Parallax Hero Photo ────────────────────────────────────────────
+(function() {
+  if (isMobile()) return;
+  const heroRight = document.querySelector('.hero-right');
+  if (!heroRight) return;
+  window.addEventListener('scroll', () => {
+    heroRight.style.transform = `translateY(${window.scrollY * 0.13}px)`;
+  }, { passive: true });
+})();
+
+// ── FAQ Accordion ──────────────────────────────────────────────────
+(function() {
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+})();
+
+// ── Orbital Timeline ───────────────────────────────────────────────
+(function() {
+  const NODES = [
+    {
+      id: 1,
+      title: 'Inflammation',
+      content: 'Chronic inflammation is the biological reason nothing has worked. It blocks fat-burning hormones, wrecks insulin sensitivity, and tells your body to store fat regardless of what you eat. We fix this first. Everything else follows.'
+    },
+    {
+      id: 2,
+      title: 'Nutrition Plan',
+      content: 'No tracking. No starving. You get an exact food plan: what to eat, how much, and when. Every food is selected for a specific biological reason, explained in plain language. Real food, built around your real life.'
+    },
+    {
+      id: 3,
+      title: 'Supplements',
+      content: 'A targeted supplement protocol built around your specific issues: low energy, hormonal imbalance, stress, inflammation, poor sleep, or low libido. Nothing generic. Every supplement is there for a clear, measurable reason.'
+    },
+    {
+      id: 4,
+      title: 'Workouts',
+      content: 'Workouts designed around your schedule and equipment. Video tutorials for every exercise, exact sets, reps, rest times, and technique notes. Gym or no gym. 20 minutes or 60. Built for people with real lives.'
+    },
+    {
+      id: 5,
+      title: 'Results',
+      content: 'When inflammation drops, nutrition is dialed in, and workouts fit your real life, fat loss becomes the natural result. Not a struggle, not a sacrifice. Just your body finally working the way it was designed to.'
+    }
+  ];
+
+  const RADIUS = 320;
+  let rotAngle = 0;
+  let autoRotate = true;
+  let activeId = null;
+  let rafId = null;
+  let lastTs = null;
+  const isMob = () => window.innerWidth <= 768 || ('ontouchstart' in window);
+
+  function calcPos(index, total, angle) {
+    const deg = ((index / total) * 360 + angle) % 360;
+    const rad = (deg * Math.PI) / 180;
+    const x = RADIUS * Math.cos(rad);
+    const y = RADIUS * Math.sin(rad);
+    const zIdx = Math.round(100 + 50 * Math.cos(rad));
+    const opa  = Math.max(0.38, Math.min(1, 0.38 + 0.62 * ((1 + Math.sin(rad)) / 2)));
+    return { x, y, zIdx, opa };
+  }
+
+  function applyPositions() {
+    if (isMob()) return;
+    NODES.forEach((node, i) => {
+      const el = document.getElementById('onode-' + node.id);
+      if (!el) return;
+      if (activeId === node.id) return;
+      const p = calcPos(i, NODES.length, rotAngle);
+      el.style.transform = 'translate(calc(-50% + ' + p.x + 'px), calc(-50% + ' + p.y + 'px))';
+      el.style.zIndex = p.zIdx;
+      // Only dim the icon and halo — labels stay fully opaque
+      if (activeId === null) {
+        const icon = el.querySelector('.orbital-node-icon');
+        const halo = el.querySelector('.orbital-node-halo');
+        if (icon) icon.style.opacity = p.opa;
+        if (halo) halo.style.opacity = p.opa;
+      }
+    });
+  }
+
+  function tick(ts) {
+    if (!autoRotate) { rafId = null; return; }
+    if (lastTs !== null) {
+      rotAngle = (rotAngle + ((ts - lastTs) / 50) * 0.15) % 360;
+    }
+    lastTs = ts;
+    applyPositions();
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function startRotate() {
+    if (rafId) return;
+    lastTs = null;
+    autoRotate = true;
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function stopRotate() {
+    autoRotate = false;
+    if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+  }
+
+  function nodeEl(id) { return document.getElementById('onode-' + id); }
+
+  function closeAll() {
+    NODES.forEach(n => {
+      const el = nodeEl(n.id);
+      if (!el) return;
+      el.classList.remove('active', 'related');
+      const card = el.querySelector('.orbital-card');
+      if (card) card.remove();
+      const icon = el.querySelector('.orbital-node-icon');
+      if (icon) icon.style.opacity = '';
+    });
+    activeId = null;
+    applyPositions();
+    startRotate();
+  }
+
+  function openNode(id) {
+    closeAll();
+    stopRotate();
+    activeId = id;
+
+    const node = NODES.find(n => n.id === id);
+    const el = nodeEl(id);
+    if (!node || !el) return;
+
+    el.classList.add('active');
+    el.style.opacity = '1';
+    el.style.zIndex = '200';
+
+    const card = document.createElement('div');
+    card.className = 'orbital-card';
+    card.innerHTML =
+      '<div class="orbital-card-title">' + node.title + '</div>' +
+      '<div class="orbital-card-body">' + node.content + '</div>';
+
+    card.addEventListener('click', e => e.stopPropagation());
+    el.appendChild(card);
+  }
+
+  // Attach node click handlers
+  NODES.forEach(node => {
+    const el = nodeEl(node.id);
+    if (!el) return;
+    el.addEventListener('click', e => {
+      e.stopPropagation();
+      if (activeId === node.id) closeAll();
+      else openNode(node.id);
+    });
+  });
+
+  // Click background to close
+  const timeline = document.getElementById('orbital-timeline');
+  if (timeline) {
+    timeline.addEventListener('click', function(e) {
+      if (!e.target.closest('.orbital-node') && !e.target.closest('.orbital-center')) {
+        closeAll();
+      }
+    });
+  }
+
+  // Init positions + start rotation
+  applyPositions();
+  startRotate();
+
+  // Recalc on resize
+  window.addEventListener('resize', applyPositions, { passive: true });
+
+  // On-load intro: pulse nodes one by one
+  if (!isMob()) {
+    setTimeout(function() {
+      NODES.forEach(function(node, i) {
+        setTimeout(function() {
+          const icon = document.querySelector('#onode-' + node.id + ' .orbital-node-icon');
+          if (!icon) return;
+          icon.style.transition = 'box-shadow 0.25s, background 0.25s';
+          icon.style.boxShadow = '0 0 28px rgba(184,169,138,0.65)';
+          icon.style.background = 'rgba(184,169,138,0.18)';
+          setTimeout(function() {
+            icon.style.boxShadow = '';
+            icon.style.background = '';
+          }, 500);
+        }, i * 280);
+      });
+    }, 900);
+  }
+})();
+</script>
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+  window.LOCALE = 'en';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+  window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+  window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+  window.translation = {
+    common: {
+      selectedList: '{quantity} list selected',
+      selectedLists: '{quantity} lists selected'
+    }
+  };
+  var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+<script>
+document.getElementById('guide-submit').addEventListener('click', function() {
+  var name  = document.getElementById('guide-name').value.trim();
+  var email = document.getElementById('guide-email').value.trim();
+  var msg   = document.getElementById('guide-message');
+
+  if (!name) {
+    msg.style.display    = 'block';
+    msg.style.color      = '#ff6b6b';
+    msg.style.background = 'rgba(255,107,107,0.1)';
+    msg.style.border     = '1px solid rgba(255,107,107,0.3)';
+    msg.innerHTML        = 'Please enter your first name.';
+    return;
+  }
+
+  if (!email || !email.includes('@')) {
+    msg.style.display    = 'block';
+    msg.style.color      = '#ff6b6b';
+    msg.style.background = 'rgba(255,107,107,0.1)';
+    msg.style.border     = '1px solid rgba(255,107,107,0.3)';
+    msg.innerHTML        = 'Please enter a valid email address.';
+    return;
+  }
+
+  document.getElementById('hidden-firstname').value = name;
+  document.getElementById('hidden-email').value = email;
+  document.getElementById('hidden-submit').click();
+
+  setTimeout(function() {
+    msg.style.display    = 'block';
+    msg.style.color      = '#b8a98a';
+    msg.style.background = 'rgba(184,169,138,0.1)';
+    msg.style.border     = '1px solid rgba(184,169,138,0.3)';
+    msg.innerHTML        = 'Check your email. The free guide is on its way.';
+    document.getElementById('guide-submit').style.display = 'none';
+    document.getElementById('guide-email').style.display  = 'none';
+    document.getElementById('guide-name').style.display   = 'none';
+  }, 1000);
+});
+</script>
+</body>
+</html>
