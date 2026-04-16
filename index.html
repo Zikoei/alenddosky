@@ -2807,17 +2807,17 @@ document.addEventListener('DOMContentLoaded', function() {
     formData.append('email_address_check', '');
     formData.append('locale', 'en');
 
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', form.action, true);
-    xhr.onload = function() {
+    fetch(form.action, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    }).then(function() {
       successMsg.style.display = 'block';
       form.style.display = 'none';
-    };
-    xhr.onerror = function() {
+    }).catch(function() {
       successMsg.style.display = 'block';
       form.style.display = 'none';
-    };
-    xhr.send(formData);
+    });
   });
 });
 </script>
