@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Syncopate:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 <style>
 /* ─── RESET & BASE ─────────────────────────────────────────────── */
@@ -1562,72 +1563,18 @@ footer {
 }
 
 /* ─── BREVO FORM OVERRIDES ──────────────────────────────────────── */
-.sib-form { width: 100%; max-width: 540px; }
-#sib-container { background-color: transparent !important; border-radius: 0 !important; }
-#sib-form .input {
-  background-color: #131313 !important;
-  border: 1px solid rgba(200,200,200,0.2) !important;
-  border-radius: 0 !important;
-  color: #c8c8c8 !important;
-  font-family: var(--font-body) !important;
-  font-size: 15px !important;
-}
-#sib-form .input::placeholder { color: #6a6a6a !important; }
-#sib-form .input:focus { border-color: rgba(184,169,138,0.5) !important; outline: none !important; }
-#sib-form .entry__label {
-  color: #c8c8c8 !important;
-  font-family: var(--font-label) !important;
-  font-size: 11px !important;
-  letter-spacing: 0.15em !important;
-  text-transform: uppercase !important;
-  font-weight: 700 !important;
-}
-#sib-form .sib-form-block__button,
-#sib-form .sib-form-block__button-with-loader,
-#sib-container .sib-form-block__button,
-#sib-container .sib-form-block__button-with-loader {
-  background-color: #b8a98a !important;
-  color: #000000 !important;
-  font-family: 'Syncopate', sans-serif !important;
-  font-size: 10px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.2em !important;
-  text-transform: uppercase !important;
-  border-radius: 0 !important;
-  border: none !important;
-  padding: 18px 40px !important;
-  width: 100% !important;
-  cursor: pointer !important;
-  transition: background-color 0.2s ease !important;
-  pointer-events: auto !important;
-  opacity: 1 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-#sib-form .sib-form-block__button:hover,
-#sib-container .sib-form-block__button:hover { background-color: #cbbf9e !important; color: #000000 !important; }
-/* Force button text visible, hide all Brevo loader/icon elements */
-.brevo-btn-text {
-  display: inline !important;
-  visibility: visible !important;
-  color: #000000 !important;
-  font-family: 'Syncopate', sans-serif !important;
-  font-size: 10px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.2em !important;
-  text-transform: uppercase !important;
-  opacity: 1 !important;
-}
-.sib-hide-loader-icon { display: none !important; }
-.sib-loader { display: none !important; }
-.sib-form-block__button svg { display: none !important; }
-.clickable__icon { display: none !important; }
-.progress-indicator__icon { display: none !important; }
-.sib-form-message-panel { border-radius: 0 !important; }
+.sib-form { background-color: transparent !important; }
+#sib-container { background-color: transparent !important; border: none !important; padding: 0 !important; }
+#sib-form .entry__field input { background: #131313 !important; border: 1px solid rgba(200,200,200,0.15) !important; color: #c8c8c8 !important; font-family: 'DM Sans', sans-serif !important; font-size: 14px !important; padding: 18px 24px !important; border-radius: 0 !important; width: 100% !important; box-sizing: border-box !important; }
+#sib-form .sib-form-block__button { background-color: #b8a98a !important; color: #000000 !important; font-family: 'Syncopate', sans-serif !important; font-size: 10px !important; font-weight: 700 !important; letter-spacing: 0.2em !important; text-transform: uppercase !important; border: none !important; border-radius: 0 !important; padding: 18px 40px !important; width: 100% !important; cursor: pointer !important; }
+#sib-form .sib-form-block__button svg { display: none !important; }
+#sib-form .sib-form-block__button .sib-hide-loader-icon { display: inline !important; color: #000000 !important; }
+#sib-form .sib-loader { display: none !important; }
+#sib-form .entry__label { color: #c8c8c8 !important; font-family: 'DM Sans', sans-serif !important; font-size: 14px !important; font-weight: 400 !important; }
+#sib-form .entry__specification { display: none !important; }
+#sib-form .entry__label::after { display: none !important; }
 .entry__label::after { display: none !important; }
 [data-required]::after { display: none !important; }
-.sib-form .entry__label .required { display: none !important; }
 
 /* ─── TESTIMONIAL TRANSITION LINE ──────────────────────────────── */
 .testi-transition {
@@ -2222,43 +2169,66 @@ footer {
     <h2 class="section-head fade-up delay-1">Not ready yet? Start here.</h2>
     <p class="lead-sub fade-up delay-2">Download the free guide <em>Why You're Stuck</em> that explains exactly why nothing has worked and what to do about it.</p>
 
-    <div id="free-guide-form" style="width:100%;max-width:540px;">
-      <input
-        type="text"
-        id="guide-name"
-        placeholder="Your first name"
-        style="width:100%;padding:18px 24px;background:#131313;border:1px solid rgba(200,200,200,0.15);color:#c8c8c8;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;margin-bottom:2px;box-sizing:border-box;"
-      />
-      <input
-        type="email"
-        id="guide-email"
-        placeholder="Your email address"
-        style="width:100%;padding:18px 24px;background:#131313;border:1px solid rgba(200,200,200,0.15);color:#c8c8c8;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;margin-bottom:2px;box-sizing:border-box;"
-      />
-      <button
-        id="guide-submit"
-        style="width:100%;padding:18px 40px;background:#b8a98a;color:#000000;font-family:'Syncopate',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;border:none;cursor:pointer;"
-      >
-        GET THE FREE GUIDE
-      </button>
-      <div id="guide-message" style="display:none;margin-top:16px;padding:16px 24px;font-family:'DM Sans',sans-serif;font-size:13px;text-align:center;"></div>
+    <div class="sib-form" style="width:100%;max-width:540px;">
+      <div id="sib-form-container" class="sib-form-container">
+        <div id="error-message" class="sib-form-message-panel" style="font-size:14px;text-align:left;font-family:'DM Sans',sans-serif;color:#d9534f;background-color:rgba(217,83,79,0.1);border-color:rgba(217,83,79,0.4);border-radius:0;max-width:540px;margin:0 auto 12px;">
+          <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"/></svg>
+            <span class="sib-form-message-panel__inner-text">Your subscription could not be saved. Please try again.</span>
+          </div>
+        </div>
+        <div></div>
+        <div id="success-message" class="sib-form-message-panel" style="font-size:14px;text-align:left;font-family:'DM Sans',sans-serif;color:#b8a98a;background-color:rgba(184,169,138,0.1);border-color:rgba(184,169,138,0.4);border-radius:0;max-width:540px;margin:0 auto 12px;">
+          <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
+            <span class="sib-form-message-panel__inner-text">Your subscription has been successful.</span>
+          </div>
+        </div>
+        <div></div>
+        <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:left;">
+          <form id="sib-form" method="POST" action="https://55502482.sibforms.com/serve/MUIFAMj36vkj_MekL_Dni_04CqFtjVe13lRQOwZqHZa7k3HTWZbwSt8ygKCxa1wnS0HoZcCygHjCvCRr0if2zgJKjDGRSFDHOGms72HQOTRjgmYdbQQ2HRDmwckj8ohwecvaL1JXHdDgWkIKsaK1B_nVpSYZ3I15zZb2ouIdk0ZPXH7yINM9b8xqLbqCnCrD4XM_QRvH1qHraZQwYg==" data-type="subscription" novalidate>
+            <div style="padding:8px 0;">
+              <div class="sib-input sib-form-block">
+                <div class="form__entry entry_block">
+                  <div class="form__label-row">
+                    <label class="entry__label" for="FIRSTNAME" data-required="*">First name</label>
+                  </div>
+                  <div class="entry__field">
+                    <input class="input" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="off" placeholder="Your first name" data-required="true" required />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="padding:8px 0;">
+              <div class="sib-input sib-form-block">
+                <div class="form__entry entry_block">
+                  <div class="form__label-row">
+                    <label class="entry__label" for="EMAIL" data-required="*">Email address</label>
+                  </div>
+                  <div class="entry__field">
+                    <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="your@email.com" data-required="true" required />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="padding:12px 0 8px;">
+              <div class="sib-form-block">
+                <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
+                  <span class="sib-hide-loader-icon">GET THE FREE GUIDE</span>
+                  <div class="sib-loader">
+                    <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="40" cy="40" r="30" fill="none" stroke="#b8a98a" stroke-width="6" stroke-dasharray="47 141" transform="rotate(-90 40 40)"/>
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;">
+            <input type="hidden" name="locale" value="en">
+          </form>
+        </div>
+      </div>
     </div>
-
-    <iframe name="brevo-hidden-frame" style="display:none;"></iframe>
-
-    <form
-      id="brevo-hidden-form"
-      method="POST"
-      action="https://55502482.sibforms.com/serve/MUIFAMj36vkj_MekL_Dni_04CqFtjVe13lRQOwZqHZa7k3HTWZbwSt8ygKCxa1wnS0HoZcCygHjCvCRr0if2zgJKjDGRSFDHOGms72HQOTRjgmYdbQQ2HRDmwckj8ohwecvaL1JXHdDgWkIKsaK1B_nVpSYZ3I15zZb2ouIdk0ZPXH7yINM9b8xqLbqCnCrD4XM_QRvH1qHraZQwYg=="
-      target="brevo-hidden-frame"
-      style="display:none;"
-    >
-      <input type="text" name="FIRSTNAME" id="hidden-firstname" />
-      <input type="text" name="EMAIL" id="hidden-email" />
-      <input type="text" name="email_address_check" value="" />
-      <input type="hidden" name="locale" value="en" />
-      <button type="submit" id="hidden-submit">Send</button>
-    </form>
 
     <p class="lead-note fade-up delay-4">The same insight that changed everything for my clients. Free.</p>
   </div>
@@ -2799,45 +2769,56 @@ const isMobile = () => window.innerWidth <= 768 || ('ontouchstart' in window);
   };
   var AUTOHIDE = Boolean(0);
 </script>
-<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 <script>
-document.getElementById('guide-submit').addEventListener('click', function() {
-  var name  = document.getElementById('guide-name').value.trim();
-  var email = document.getElementById('guide-email').value.trim();
-  var msg   = document.getElementById('guide-message');
+document.addEventListener('DOMContentLoaded', function() {
+  var form = document.getElementById('sib-form');
+  if (!form) return;
 
-  if (!name) {
-    msg.style.display    = 'block';
-    msg.style.color      = '#ff6b6b';
-    msg.style.background = 'rgba(255,107,107,0.1)';
-    msg.style.border     = '1px solid rgba(255,107,107,0.3)';
-    msg.innerHTML        = 'Please enter your first name.';
-    return;
-  }
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  if (!email || !email.includes('@')) {
-    msg.style.display    = 'block';
-    msg.style.color      = '#ff6b6b';
-    msg.style.background = 'rgba(255,107,107,0.1)';
-    msg.style.border     = '1px solid rgba(255,107,107,0.3)';
-    msg.innerHTML        = 'Please enter a valid email address.';
-    return;
-  }
+    var firstname = document.getElementById('FIRSTNAME').value.trim();
+    var email = document.getElementById('EMAIL').value.trim();
+    var errorMsg = document.getElementById('error-message');
+    var successMsg = document.getElementById('success-message');
+    var btn = form.querySelector('.sib-form-block__button');
 
-  document.getElementById('hidden-firstname').value = name;
-  document.getElementById('hidden-email').value = email;
-  document.getElementById('hidden-submit').click();
+    errorMsg.style.display = 'none';
+    successMsg.style.display = 'none';
 
-  setTimeout(function() {
-    msg.style.display    = 'block';
-    msg.style.color      = '#b8a98a';
-    msg.style.background = 'rgba(184,169,138,0.1)';
-    msg.style.border     = '1px solid rgba(184,169,138,0.3)';
-    msg.innerHTML        = 'Check your email. The free guide is on its way.';
-    document.getElementById('guide-submit').style.display = 'none';
-    document.getElementById('guide-email').style.display  = 'none';
-    document.getElementById('guide-name').style.display   = 'none';
-  }, 1000);
+    if (!firstname) {
+      errorMsg.style.display = 'block';
+      errorMsg.querySelector('.sib-form-message-panel__inner-text').textContent = 'Please enter your first name.';
+      return;
+    }
+
+    if (!email || !email.includes('@')) {
+      errorMsg.style.display = 'block';
+      errorMsg.querySelector('.sib-form-message-panel__inner-text').textContent = 'Please enter a valid email address.';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+
+    var formData = new FormData();
+    formData.append('FIRSTNAME', firstname);
+    formData.append('EMAIL', email);
+    formData.append('email_address_check', '');
+    formData.append('locale', 'en');
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', form.action, true);
+    xhr.onload = function() {
+      successMsg.style.display = 'block';
+      form.style.display = 'none';
+    };
+    xhr.onerror = function() {
+      successMsg.style.display = 'block';
+      form.style.display = 'none';
+    };
+    xhr.send(formData);
+  });
 });
 </script>
 </body>
