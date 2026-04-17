@@ -1781,11 +1781,19 @@ footer {
 
   /* Hero */
   .hero-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     padding: 50px 24px 36px;
-    gap: 36px;
+    gap: 24px;
   }
-  .hero-right { order: 1; }   /* photo BELOW text on mobile */
+  .hero-left { display: contents; } /* dissolve wrapper so children join hero-grid flex */
+  .hero-tag         { order: 1; }
+  .hero-credibility { order: 1; }
+  .hero-headline    { order: 2; }
+  .hero-sub         { order: 3; }
+  .hero-right       { order: 4; }
+  .hero-btns        { order: 5; }
+  .hero-stats       { order: 6; }
   .hero-transform-single { min-height: 260px; }
   .hero-transform-single img { min-height: 260px; }
   .hero-stats { gap: 20px; flex-wrap: wrap; }
