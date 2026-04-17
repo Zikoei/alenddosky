@@ -187,6 +187,7 @@ nav.scrolled {
   background: none;
   border: none;
   padding: 4px;
+  cursor: pointer;
 }
 .nav-hamburger span {
   display: block;
@@ -945,80 +946,19 @@ nav.scrolled {
   from { opacity: 0; transform: translateX(-50%) translateY(10px); }
   to   { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
-/* Mobile: stacked list */
+/* Mobile method section */
+.method-mobile { display: none; }
+.method-mobile-center { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #b8a98a; font-style: italic; text-align: center; margin-bottom: 40px; letter-spacing: 0.05em; }
+.method-mobile-item { display: flex; align-items: flex-start; gap: 20px; padding: 20px 0; border-bottom: 1px solid rgba(184,169,138,0.1); }
+.method-mobile-num { font-family: 'Cormorant Garamond', serif; font-size: 32px; color: rgba(184,169,138,0.3); min-width: 32px; line-height: 1; }
+.method-mobile-title { font-family: Arial, sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #e8e8e8; margin-bottom: 6px; }
+.method-mobile-desc { font-family: 'DM Sans', sans-serif; font-size: 13px; color: #888; line-height: 1.6; }
+
 @media (max-width: 768px) {
-  .orbital-section {
-    height: auto;
-    margin: 32px 0 40px;
-    overflow: visible;
-  }
-  .orbital-wrapper {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-  }
-  .orbital-ring { display: none; }
-  .orbital-center {
-    position: relative;
-    top: auto; left: auto;
-    transform: none;
-    margin-bottom: 28px;
-  }
-  .orbital-center-core { width: 64px; height: 64px; }
-  .orbital-center-ring:nth-child(1) { width: 80px; height: 80px; }
-  .orbital-center-ring:nth-child(2) { width: 96px; height: 96px; }
-  .orbital-center-inner { width: 29px; height: 29px; }
-  .orbital-center-label { margin-top: 42px; }
-  .orbital-node {
-    position: relative !important;
-    top: auto !important; left: auto !important;
-    transform: none !important;
-    opacity: 1 !important;
-    z-index: auto !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  .orbital-node-icon {
-    transform: none;
-    position: relative;
-    top: auto; left: auto;
-    margin: 0 auto;
-    width: 48px; height: 48px;
-    font-size: 14px;
-  }
-  .orbital-node.active .orbital-node-icon {
-    transform: scale(1.2);
-  }
-  .orbital-node-label {
-    position: relative;
-    top: auto; left: auto;
-    transform: none;
-    margin-top: 10px;
-    font-size: 16px;
-    white-space: normal;
-    text-align: center;
-  }
-  .orbital-node.active .orbital-node-label {
-    transform: none;
-    top: auto;
-  }
-  .orbital-card {
-    position: relative;
-    top: auto; left: auto;
-    transform: none;
-    width: 100%;
-    max-width: 288px;
-    margin: 12px auto 10px;
-    animation: none;
-  }
-  .orbital-card::before { display: none; }
-  .orbital-hint { font-size: 10px; letter-spacing: 0.12em; margin-bottom: 16px; }
+  .method-mobile { display: block !important; padding: 40px 24px; }
+  .orbital-section,
+  #orbital-timeline { display: none !important; }
+  .orbital-hint { display: none !important; }
 }
 
 /* ─── SECTION: RESULTS ─────────────────────────────────────────── */
@@ -2145,6 +2085,48 @@ footer {
           <div class="orbital-node-halo" style="width:115px;height:115px;"></div>
           <div class="orbital-node-icon"><span class="orbital-node-num">5</span></div>
           <div class="orbital-node-label">Results</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile method list (shown only ≤768px) -->
+    <div class="method-mobile" style="display:block!important;background:red;padding:40px;">
+      <div class="method-mobile-center">Your Body</div>
+      <div class="method-mobile-items">
+        <div class="method-mobile-item">
+          <span class="method-mobile-num">1</span>
+          <div class="method-mobile-content">
+            <div class="method-mobile-title">Nutrition Plan</div>
+            <div class="method-mobile-desc">Custom anti-inflammatory meals built for your schedule</div>
+          </div>
+        </div>
+        <div class="method-mobile-item">
+          <span class="method-mobile-num">2</span>
+          <div class="method-mobile-content">
+            <div class="method-mobile-title">Workouts</div>
+            <div class="method-mobile-desc">30 minute sessions with video tutorials for every exercise</div>
+          </div>
+        </div>
+        <div class="method-mobile-item">
+          <span class="method-mobile-num">3</span>
+          <div class="method-mobile-content">
+            <div class="method-mobile-title">Inflammation</div>
+            <div class="method-mobile-desc">Remove the root cause blocking your fat loss completely</div>
+          </div>
+        </div>
+        <div class="method-mobile-item">
+          <span class="method-mobile-num">4</span>
+          <div class="method-mobile-content">
+            <div class="method-mobile-title">Supplements</div>
+            <div class="method-mobile-desc">Targeted stack for your hormones, energy and sleep</div>
+          </div>
+        </div>
+        <div class="method-mobile-item">
+          <span class="method-mobile-num">5</span>
+          <div class="method-mobile-content">
+            <div class="method-mobile-title">Results</div>
+            <div class="method-mobile-desc">Fat loss that stays because the root cause is fixed</div>
+          </div>
         </div>
       </div>
     </div>
