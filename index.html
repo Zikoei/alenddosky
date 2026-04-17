@@ -948,11 +948,17 @@ nav.scrolled {
 }
 /* Mobile method section */
 .method-mobile { display: none; }
-.method-mobile-center { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #b8a98a; font-style: italic; text-align: center; margin-bottom: 40px; letter-spacing: 0.05em; }
-.method-mobile-item { display: flex; align-items: flex-start; gap: 20px; padding: 20px 0; border-bottom: 1px solid rgba(184,169,138,0.1); }
-.method-mobile-num { width: 44px; height: 44px; min-width: 44px; border-radius: 50%; border: 1px solid rgba(184,169,138,0.5); background: #131313; display: flex; align-items: center; justify-content: center; font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; color: #b8a98a; }
-.method-mobile-title { font-family: Arial, sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #e8e8e8; margin-bottom: 6px; }
-.method-mobile-desc { font-family: 'DM Sans', sans-serif; font-size: 13px; color: #888; line-height: 1.6; }
+.orbital-static { position: relative; width: 300px; height: 300px; margin: 40px auto; }
+.orbital-static-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; border-radius: 50%; border: 1px solid rgba(184,169,138,0.5); background: #131313; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 11px; font-style: italic; color: #b8a98a; text-align: center; line-height: 1.3; z-index: 2; }
+.orbital-static::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 260px; height: 260px; border-radius: 50%; border: 1px solid rgba(184,169,138,0.15); }
+.orbital-static-node { position: absolute; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.orbital-static-dot { width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(184,169,138,0.5); background: #131313; display: flex; align-items: center; justify-content: center; font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; color: #b8a98a; }
+.orbital-static-label { font-family: Arial, sans-serif; font-size: 8px; letter-spacing: 0.15em; text-transform: uppercase; color: #c8c8c8; text-align: center; white-space: nowrap; }
+.node-1 { top: calc(150px - 130px - 20px); left: calc(150px - 20px); }
+.node-2 { top: calc(150px - 40px - 40px); left: calc(150px + 110px - 20px); }
+.node-3 { top: calc(150px + 40px); left: calc(150px + 110px - 20px); }
+.node-4 { top: calc(150px + 40px); left: calc(150px - 110px - 20px); }
+.node-5 { top: calc(150px - 40px - 40px); left: calc(150px - 110px - 20px); }
 
 @media (max-width: 768px) {
   .method-mobile { display: block !important; padding: 40px 24px; }
@@ -2106,44 +2112,32 @@ footer {
       </div>
     </div>
 
-    <!-- Mobile method list (shown only ≤768px) -->
+    <!-- Mobile static orbital (shown only ≤768px) -->
     <div class="method-mobile" style="display:none;">
-      <div class="method-mobile-center">Your Body</div>
-      <div class="method-mobile-items">
-        <div class="method-mobile-item">
-          <span class="method-mobile-num">1</span>
-          <div class="method-mobile-content">
-            <div class="method-mobile-title">Nutrition Plan</div>
-            <div class="method-mobile-desc">No tracking. No starving. You get an exact food plan: what to eat, how much, and when. Every food is selected for a specific biological reason, explained in plain language. Real food, built around your real life.</div>
-          </div>
+      <div class="orbital-static">
+        <div class="orbital-static-center">
+          <span>Your</span>
+          <span>Body</span>
         </div>
-        <div class="method-mobile-item">
-          <span class="method-mobile-num">2</span>
-          <div class="method-mobile-content">
-            <div class="method-mobile-title">Workouts</div>
-            <div class="method-mobile-desc">Workouts designed around your schedule and equipment. Video tutorials for every exercise, exact sets, reps, rest times, and technique notes. Gym or no gym. 20 minutes or 60. Built for people with real lives.</div>
-          </div>
+        <div class="orbital-static-node node-1">
+          <div class="orbital-static-dot">1</div>
+          <div class="orbital-static-label">Nutrition Plan</div>
         </div>
-        <div class="method-mobile-item">
-          <span class="method-mobile-num">3</span>
-          <div class="method-mobile-content">
-            <div class="method-mobile-title">Inflammation</div>
-            <div class="method-mobile-desc">Chronic inflammation is the biological reason nothing has worked. It blocks fat-burning hormones, wrecks insulin sensitivity, and tells your body to store fat regardless of what you eat. We fix this first. Everything else follows.</div>
-          </div>
+        <div class="orbital-static-node node-2">
+          <div class="orbital-static-dot">2</div>
+          <div class="orbital-static-label">Workouts</div>
         </div>
-        <div class="method-mobile-item">
-          <span class="method-mobile-num">4</span>
-          <div class="method-mobile-content">
-            <div class="method-mobile-title">Supplements</div>
-            <div class="method-mobile-desc">A targeted supplement protocol built around your specific issues: low energy, hormonal imbalance, stress, inflammation, poor sleep, or low libido. Nothing generic. Every supplement is there for a clear, measurable reason.</div>
-          </div>
+        <div class="orbital-static-node node-3">
+          <div class="orbital-static-dot">3</div>
+          <div class="orbital-static-label">Inflammation</div>
         </div>
-        <div class="method-mobile-item">
-          <span class="method-mobile-num">5</span>
-          <div class="method-mobile-content">
-            <div class="method-mobile-title">Results</div>
-            <div class="method-mobile-desc">When inflammation drops, nutrition is dialed in, and workouts fit your real life, fat loss becomes the natural result. Not a struggle, not a sacrifice. Just your body finally working the way it was designed to.</div>
-          </div>
+        <div class="orbital-static-node node-4">
+          <div class="orbital-static-dot">4</div>
+          <div class="orbital-static-label">Supplements</div>
+        </div>
+        <div class="orbital-static-node node-5">
+          <div class="orbital-static-dot">5</div>
+          <div class="orbital-static-label">Results</div>
         </div>
       </div>
     </div>
