@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Syncopate:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="icon" href="data:,">
+<link rel="icon" type="image/png" href="brand.assets/Profil%20bild%20newest.png">
 <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 <style>
 /* ─── RESET & BASE ─────────────────────────────────────────────── */
@@ -1563,18 +1563,62 @@ footer {
 }
 
 /* ─── BREVO FORM OVERRIDES ──────────────────────────────────────── */
-.sib-form { background-color: transparent !important; }
+.sib-form { background-color: transparent !important; width: 100% !important; max-width: 560px !important; }
 #sib-container { background-color: transparent !important; border: none !important; padding: 0 !important; }
-#sib-form .entry__field input { background: #131313 !important; border: 1px solid rgba(200,200,200,0.15) !important; color: #c8c8c8 !important; font-family: 'DM Sans', sans-serif !important; font-size: 14px !important; padding: 18px 24px !important; border-radius: 0 !important; width: 100% !important; box-sizing: border-box !important; }
-#sib-form .sib-form-block__button { background-color: #b8a98a !important; color: #000000 !important; font-family: 'Syncopate', sans-serif !important; font-size: 10px !important; font-weight: 700 !important; letter-spacing: 0.2em !important; text-transform: uppercase !important; border: none !important; border-radius: 0 !important; padding: 18px 40px !important; width: 100% !important; cursor: pointer !important; }
+#sib-form .entry__field input {
+  background: #131313 !important;
+  border: 1px solid rgba(200,200,200,0.15) !important;
+  color: #c8c8c8 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 15px !important;
+  padding: 0 24px !important;
+  min-height: 56px !important;
+  border-radius: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+#sib-form .entry__field input:focus {
+  border-color: rgba(184,169,138,0.5) !important;
+  box-shadow: 0 0 0 1px rgba(184,169,138,0.4) !important;
+  outline: none !important;
+}
+#sib-form .sib-form-block__button {
+  background-color: #b8a98a !important;
+  color: #000000 !important;
+  font-family: 'Syncopate', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 40px !important;
+  min-height: 56px !important;
+  width: 100% !important;
+  cursor: pointer !important;
+}
 #sib-form .sib-form-block__button svg { display: none !important; }
 #sib-form .sib-form-block__button .sib-hide-loader-icon { display: inline !important; color: #000000 !important; }
 #sib-form .sib-loader { display: none !important; }
-#sib-form .entry__label { color: #c8c8c8 !important; font-family: 'DM Sans', sans-serif !important; font-size: 14px !important; font-weight: 400 !important; }
+#sib-form .entry__label {
+  color: #9a9a9a !important;
+  font-family: 'Syncopate', sans-serif !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  display: block !important;
+  margin-bottom: 8px !important;
+}
 #sib-form .entry__specification { display: none !important; }
 #sib-form .entry__label::after { display: none !important; }
 .entry__label::after { display: none !important; }
 [data-required]::after { display: none !important; }
+/* Lead section particles positioning */
+.lead-section { position: relative; overflow: hidden; }
+.lead-inner { position: relative; z-index: 1; }
+#form-particles { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
 
 /* ─── TESTIMONIAL TRANSITION LINE ──────────────────────────────── */
 .testi-transition {
@@ -2164,12 +2208,13 @@ footer {
 
 <!-- ─── LEAD MAGNET ──────────────────────────────────────────────── -->
 <section class="lead-section" id="freeguide">
+  <div id="form-particles"></div>
   <div class="lead-inner">
     <span class="section-tag fade-up">Free Resource</span>
     <h2 class="section-head fade-up delay-1">Not ready yet? Start here.</h2>
     <p class="lead-sub fade-up delay-2">Download the free guide <em>Why You're Stuck</em> that explains exactly why nothing has worked and what to do about it.</p>
 
-    <div class="sib-form" style="width:100%;max-width:540px;">
+    <div class="sib-form" style="width:100%;max-width:560px;">
       <div id="sib-form-container" class="sib-form-container">
         <div id="error-message" class="sib-form-message-panel" style="font-size:14px;text-align:left;font-family:'DM Sans',sans-serif;color:#d9534f;background-color:rgba(217,83,79,0.1);border-color:rgba(217,83,79,0.4);border-radius:0;max-width:540px;margin:0 auto 12px;">
           <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
@@ -2187,7 +2232,7 @@ footer {
         <div></div>
         <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:left;">
           <form id="sib-form" method="POST" action="https://55502482.sibforms.com/serve/MUIFAMj36vkj_MekL_Dni_04CqFtjVe13lRQOwZqHZa7k3HTWZbwSt8ygKCxa1wnS0HoZcCygHjCvCRr0if2zgJKjDGRSFDHOGms72HQOTRjgmYdbQQ2HRDmwckj8ohwecvaL1JXHdDgWkIKsaK1B_nVpSYZ3I15zZb2ouIdk0ZPXH7yINM9b8xqLbqCnCrD4XM_QRvH1qHraZQwYg==" data-type="subscription" novalidate>
-            <div style="padding:8px 0;">
+            <div style="padding:0 0 12px 0;">
               <div class="sib-input sib-form-block">
                 <div class="form__entry entry_block">
                   <div class="form__label-row">
@@ -2199,7 +2244,7 @@ footer {
                 </div>
               </div>
             </div>
-            <div style="padding:8px 0;">
+            <div style="padding:0 0 12px 0;">
               <div class="sib-input sib-form-block">
                 <div class="form__entry entry_block">
                   <div class="form__label-row">
@@ -2211,7 +2256,7 @@ footer {
                 </div>
               </div>
             </div>
-            <div style="padding:12px 0 8px;">
+            <div style="padding:4px 0 0;">
               <div class="sib-form-block">
                 <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
                   <span class="sib-hide-loader-icon">GET THE FREE GUIDE</span>
@@ -2820,6 +2865,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
+<script>
+(function() {
+  if (typeof tsParticles === 'undefined') return;
+  tsParticles.load('form-particles', {
+    background: { color: { value: 'transparent' } },
+    fpsLimit: 40,
+    particles: {
+      number: { value: 40, density: { enable: true, area: 800 } },
+      color: { value: '#b8a98a' },
+      opacity: { value: 0.5, random: true, animation: { enable: true, speed: 0.4, minimumValue: 0.1, sync: false } },
+      size: { value: { min: 0.4, max: 1.2 }, random: true },
+      move: { enable: true, speed: 0.3, direction: 'none', random: true, straight: false, outModes: 'out' },
+      shape: { type: 'circle' }
+    },
+    detectRetina: true,
+    interactivity: { events: { onHover: { enable: false }, onClick: { enable: false } } }
+  });
+})();
 </script>
 </body>
 </html>
