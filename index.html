@@ -111,13 +111,41 @@ nav.scrolled {
   gap: 20px;
 }
 .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+.nav-logo-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #0f0f0f;
+  border: 1px solid rgba(184,169,138,0.4);
+  box-shadow: 0 0 12px rgba(184,169,138,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.nav-logo-mark span {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 28px;
+  font-weight: 400;
+  color: transparent;
+  -webkit-text-stroke: 1px #b8a98a;
+  line-height: 1;
+  user-select: none;
+}
+.nav-logo-text {
   font-family: var(--font-label);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.12em;
   color: var(--white);
-  white-space: nowrap;
-  flex-shrink: 0;
 }
 .nav-links {
   display: flex;
@@ -1897,14 +1925,17 @@ footer {
 <!-- ─── NAV ────────────────────────────────────────────────────── -->
 <nav id="mainNav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">ALEND DOSKY</a>
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-mark"><span>A</span></div>
+      <span class="nav-logo-text">ALEND DOSKY</span>
+    </a>
     <ul class="nav-links">
-      <li><a href="#problem">Why You're Stuck</a></li>
-      <li><a href="#method">The Solution</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#story">About</a></li>
+      <li><a href="#method">Method</a></li>
+      <li><a href="#testimonials">Results</a></li>
+      <li><a href="#freeguide">Free Guide</a></li>
       <li><a href="#plans">Plans</a></li>
       <li><a href="#membership">Membership</a></li>
-      <li><a href="#faq">FAQ</a></li>
     </ul>
     <a href="#plans" class="nav-cta">Get Your Plan</a>
     <button class="nav-hamburger" id="hamburger" aria-label="Menu">
@@ -1915,12 +1946,12 @@ footer {
 
 <!-- ─── MOBILE MENU ─────────────────────────────────────────────── -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#problem" class="mobile-link">Why You're Stuck</a>
-  <a href="#method" class="mobile-link">The Solution</a>
-  <a href="#testimonials" class="mobile-link">Testimonials</a>
+  <a href="#story" class="mobile-link">About</a>
+  <a href="#method" class="mobile-link">Method</a>
+  <a href="#testimonials" class="mobile-link">Results</a>
+  <a href="#freeguide" class="mobile-link">Free Guide</a>
   <a href="#plans" class="mobile-link">Plans</a>
   <a href="#membership" class="mobile-link">Membership</a>
-  <a href="#faq" class="mobile-link">FAQ</a>
   <a href="#plans" class="nav-cta">Get Your Plan</a>
 </div>
 
