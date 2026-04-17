@@ -1565,22 +1565,29 @@ footer {
 /* ─── BREVO FORM OVERRIDES ──────────────────────────────────────── */
 .sib-form { background-color: transparent !important; width: 100% !important; max-width: 560px !important; }
 #sib-container { background-color: transparent !important; border: none !important; padding: 0 !important; }
+#sib-form .sib-input,
+#sib-form .sib-form-block,
+#sib-form .form__entry,
+#sib-form .entry__field { width: 100% !important; box-sizing: border-box !important; }
 #sib-form .entry__field input {
-  background: #131313 !important;
-  border: 1px solid rgba(200,200,200,0.15) !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(184,169,138,0.3) !important;
+  box-shadow: none !important;
   color: #c8c8c8 !important;
   font-family: 'DM Sans', sans-serif !important;
-  font-size: 15px !important;
-  padding: 0 24px !important;
+  font-size: 14px !important;
+  padding: 12px 0 !important;
   min-height: 56px !important;
   border-radius: 0 !important;
   width: 100% !important;
   box-sizing: border-box !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  transition: border-color 0.2s ease !important;
 }
+#sib-form .entry__field input::placeholder { color: rgba(200,200,200,0.3) !important; }
 #sib-form .entry__field input:focus {
-  border-color: rgba(184,169,138,0.5) !important;
-  box-shadow: 0 0 0 1px rgba(184,169,138,0.4) !important;
+  border-bottom-color: #b8a98a !important;
+  box-shadow: none !important;
   outline: none !important;
 }
 #sib-form .sib-form-block__button {
@@ -1602,11 +1609,11 @@ footer {
 #sib-form .sib-form-block__button .sib-hide-loader-icon { display: inline !important; color: #000000 !important; }
 #sib-form .sib-loader { display: none !important; }
 #sib-form .entry__label {
-  color: #9a9a9a !important;
+  color: #b8a98a !important;
   font-family: 'Syncopate', sans-serif !important;
   font-size: 9px !important;
   font-weight: 700 !important;
-  letter-spacing: 0.18em !important;
+  letter-spacing: 0.2em !important;
   text-transform: uppercase !important;
   display: block !important;
   margin-bottom: 8px !important;
@@ -2232,7 +2239,7 @@ footer {
         <div></div>
         <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:left;">
           <form id="sib-form" method="POST" action="https://55502482.sibforms.com/serve/MUIFAMj36vkj_MekL_Dni_04CqFtjVe13lRQOwZqHZa7k3HTWZbwSt8ygKCxa1wnS0HoZcCygHjCvCRr0if2zgJKjDGRSFDHOGms72HQOTRjgmYdbQQ2HRDmwckj8ohwecvaL1JXHdDgWkIKsaK1B_nVpSYZ3I15zZb2ouIdk0ZPXH7yINM9b8xqLbqCnCrD4XM_QRvH1qHraZQwYg==" data-type="subscription" novalidate>
-            <div style="padding:0 0 12px 0;">
+            <div style="padding:0 0 32px 0;">
               <div class="sib-input sib-form-block">
                 <div class="form__entry entry_block">
                   <div class="form__label-row">
@@ -2244,7 +2251,7 @@ footer {
                 </div>
               </div>
             </div>
-            <div style="padding:0 0 12px 0;">
+            <div style="padding:0 0 32px 0;">
               <div class="sib-input sib-form-block">
                 <div class="form__entry entry_block">
                   <div class="form__label-row">
@@ -2256,7 +2263,7 @@ footer {
                 </div>
               </div>
             </div>
-            <div style="padding:4px 0 0;">
+            <div style="padding:0;">
               <div class="sib-form-block">
                 <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
                   <span class="sib-hide-loader-icon">GET THE FREE GUIDE</span>
